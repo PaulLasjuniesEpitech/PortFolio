@@ -1,0 +1,32 @@
+.MOVEPAGE{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.item{
+    min-height: 150px;
+    margin: 0px;
+    padding: 20px;
+}
+.item:hover > h1{
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    font-size: 85px;
+}
+
+@media (max-width: 500px){
+    h1{
+        font-size: 30px;
+    }
+    .item:hover > h1{
+    font-size: 35px;
+    }
+    .item{
+    flex: 1 0 10%;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    }
+}

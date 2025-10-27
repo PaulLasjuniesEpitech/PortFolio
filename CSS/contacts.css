@@ -1,0 +1,25 @@
+a{
+    text-decoration: none;
+    color: #fff;
+    font-family: "SUSE mono";
+}
+
+.link{
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.Contacts{
+    top: 15vh;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    flex-direction: column;
+    width: 100%;
+    font-size: 40px;
+    padding: 20px;
+    margin: 10px;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
