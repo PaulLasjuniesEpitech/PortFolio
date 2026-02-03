@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,170 +11,678 @@
     <link rel="stylesheet" href="../CSS/projects.css">
     <link rel="stylesheet" href="../CSS/contacts.css">
 </head>
+
 <body id="body">
-    <video autoplay loop muted plays-inline class="back-video" >
+    <img class="back-image image-wrapper" src="../DOCS/test.png" />
+    <video autoplay loop muted plays-inline class="back-video">
         <source src="../VIDEOS/1min_star_field.mp4" type="video/mp4">
     </video>
-<!--     <video autoplay loop muted plays-inline class="back-video" style="display:none;">
-        <source src="1min_star_field.mp4" type="video/mp4">
-    </video> -->
-
-<!--     <script>
-  const video1 = document.getElementById('video1');
-  const video2 = document.getElementById('video2');
-
-  video1.addEventListener('ended', () => {
-    video1.style.display = 'none';      
-    video2.style.display = 'block';     
-    video2.play();                     
-  });
-</script> -->
 
     <header>
         <nav>
-            <h2>Lasjunies Paul</h2>
+            <h2>LASJUNIES Paul</h2>
             <button class="mouvement" id="homemouvement" type="button" style="display:none;">Move</button>
             <button class="mouvement" id="aboutmouvement" type="button" style="display:none;">Move</button>
             <button class="mouvement" id="projectmouvement" type="button" style="display:none;">Move</button>
-            
+            <button class="mouvement" id="contractmouvement" type="button" style="display:none;">Move</button>
         </nav>
     </header>
+
     <main id="body" class="portefolio">
+        <!-- HOME SECTION -->
         <div class="HOME" id="dHOME">
+            <!-- INTRO -->
             <div id="intro">
-                <h1 id="Text0" style="display:none;">
-                Welcome
-                </h1>
-                <h1 id="Text10" style="display:none;">
-                _
-                </h1>
-            
-                <h2>
-                    <div class="text_transition" id="Text1" style="display:flex;"> My name is <br> Paul Lasjunies <br> I'm a student at Epitech. <br> And <br> I'm glad to present you <br> my portfolio! <br><br>Please click anywhere <br><br></div>
-                    <div class="text_transition" id="Text2" style="display:none;"> I have choose a specifique format, <br> I'm a huge fan of space and space travel! <br><br></div>
-                    <div class="text_transition" id="Text3" style="display:none;"> So I decided to present my project as a <br> space journey. <br></div>
-                    <div class="text_transition" id="Text4" style="display:none;"> At the end of this short introduction, <br> you’ll arrive at my homepage. <br></div>
-                    <div class="text_transition" id="Text5" style="display:none;"> If you want to access the other parts of my portfolio, <br></div>
-                    <div class="text_transition" id="Text6" style="display:none;"> you’ll need to click on the “move” button <br> at the top center of the page. <br></div>
-                    <div class="text_transition" id="Text7" style="display:none;"> You can then choose which section you’d like to visit next. <br></div>
-                    <div class="text_transition" id="Text8" style="display:none;"> Please note that if you decide to go to the contact page, <br> it will mark the end of our journey. <br><br><br></div>
-                    <div class="text_transition" id="Text9" style="display:none;">I wish you a pleasant trip!</div>
-                </h2>
+
+                <!-- Message d'avertissement pour mobile -->
+                <div class="device-warning">
+                    <span class="warning-icon"></span>
+                    <p>For a better experience, please use a computer</p>
+                </div>
+
+                <!-- Contrôles d'animation -->
+                <div class="intro-controls">
+                    <button id="prevBtn" class="control-btn">◄ Previous</button>
+                    <label class="animation-toggle">
+                        <input type="checkbox" id="animationToggle" checked>
+                        <span>Animation</span>
+                    </label>
+                    <button id="nextBtn" class="control-btn">Next ►</button>
+                </div>
+
+                <div class="typing-container">
+                    <h2 id="typingText"></h2>
+                </div>
             </div>
+
+            <!-- HOME PAGE -->
             <div id="home" style="display:none;">
-                <h2>Come with me in my trip... <br><br> Please click on the Move button</h2>
+                <!-- 1. Hero - Centré en haut -->
+
+                <div class="home-hero">
+                    <h1>Paul LASJUNIES</h1>
+
+                    <!-- Bouton CV Download -->
+                    <a href="../DOCS/CV.pdf" download class="cv-download-btn">
+                        <span class="cv-icon">📄</span>
+                        <div class="cv-text">
+                            <span class="cv-title">Start your journey fully prepared</span>
+                            <span class="cv-subtitle">Download my CV</span>
+                        </div>
+                    </a>
+
+                    <h3>Student Developer at Epitech</h3>
+                    <p>Welcome aboard.<br>Start your journey through my work.</p>
+                </div>
+
+                <!-- 2. Mini présentation - Gauche, 3/4 de largeur -->
+                <div class="home-about">
+                    <h2>About This Journey</h2>
+                    <p>
+                        I'm a student at Epitech, passionate about software development,
+                        new technologies and creative experiences.
+                        This portfolio is designed as a space journey to reflect
+                        my curiosity and my way of exploring new ideas.
+                    </p>
+                </div>
+
+                <!-- 4. Projets mis en avant - Droite, 3/4 de largeur -->
+                <div class="home-projects">
+                    <h2>Featured Missions</h2>
+                    <div class="featured-project">
+                        <h3>Drone Project</h3>
+                        <p>Built a custom drone using Arduino, 3D printing and electronics</p>
+                    </div>
+                    <div class="featured-project">
+                        <h3>JobBoard Platform</h3>
+                        <p>A web platform connecting job seekers with opportunities</p>
+                    </div>
+                </div>
+
+                <!-- 5. Message immersif -->
+                <div class="home-status">
+                    <p>Current mission status: <span class="status-active">Active</span></p>
+                    <p>All systems operational</p>
+                </div>
             </div>
         </div>
-        <div class="About_me" id="dAbout_me" style="display:none;" >
-            <div id="text">
-                <h1>About me</h1>
-                <h3>
-                    Hi, my name is Paul, I'm a student from Epitech. <br>
-                    I love programing and find new technologies.
-                </h3>
+
+        <!-- ABOUT ME SECTION -->
+        <div class="About_me" id="dAbout_me" style="display:none;">
+            <!-- Hero About -->
+            <div class="about-hero">
+                <h1>About Me</h1>
+                <p class="subtitle">Student Developer • Space Enthusiast • Problem Solver</p>
             </div>
-            <div id="skills">
-                <h3>
-                    My shills :
-                </h3> 
-                <h3>
-                    <br> Front :
-                </h3>
-                <div id="list">
-                    <h4 id="card">
-                        HTML
-                    </h4>
-                    <h4 id="card">
-                        CSS
-                    </h4>
-                    <h4 id="card">
-                        JS
-                    </h4>
-                </div>
-                <h3>
-                    <br> Backend & Database :
-                </h3>
-                <div id="list">
-                    <h4 id="card">
-                        Python
-                    </h4>
-                    <h4 id="card">
-                        FastAPI
-                    </h4>
-                    <h4 id="card">
-                        Mysql
-                    </h4>
-                </div>
-                <h3>
-                    <br> Tools :
-                </h3>
-                <div id="list">
-                    <h4 id="card">
-                        Git
-                    </h4>
-                    <h4 id="card">
-                        GitHib
-                    </h4>
-                    <h4 id="card">
-                        Bash
-                    </h4>
-                </div>
-                <h3>
-                    <br> And more incomming...
-                </h3>
-                <div><img id="image" src="../DOCS/e.jpg" alt="portret" style="width: 600px; height: 400px;"></div>
+
+            <!-- Introduction -->
+            <div class="about-intro">
+                <h2>Hi, I'm Paul 👋</h2>
+                <p>
+                    I'm a student developer at Epitech, passionate about software development,
+                    problem solving and building meaningful projects.
+                </p>
+                <p>
+                    During my studies, I've worked on both team and individual projects
+                    involving algorithms, system programming and web technologies.
+                </p>
             </div>
+
+            <!-- My Approach - Deux colonnes -->
+            <div class="about-grid">
+                <div class="about-card">
+                    <h3>🧠 How I Work</h3>
+                    <p>
+                        I enjoy understanding how things work, writing clean code
+                        and constantly improving my skills. I like to understand problems
+                        deeply before coding, analyzing different approaches to find
+                        the most efficient solution.
+                    </p>
+                </div>
+
+                <div class="about-card">
+                    <h3>🤝 Collaboration</h3>
+                    <p>
+                        I'm curious, autonomous, and I appreciate collaborating
+                        with others to find efficient solutions. Working in teams
+                        allows me to learn from different perspectives and improve
+                        my own approach to problem-solving.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Skills Section avec logos -->
+            <div class="about-skills">
+                <h2>Technical Skills</h2>
+
+                <div class="skills-grid">
+                    <!-- Frontend -->
+                    <div class="skill-item">
+                        <img src="../DOCS/languages/html.png" alt="HTML">
+                        <span>HTML</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="../DOCS/languages/C.png" alt="CSS">
+                        <span>CSS</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="../DOCS/languages/java.png" alt="JavaScript">
+                        <span>JavaScript</span>
+                    </div>
+
+                    <!-- Backend -->
+                    <div class="skill-item">
+                        <img src="../DOCS/languages/python.png" alt="Python">
+                        <span>Python</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="../DOCS/languages/godot.png" alt="Godot">
+                        <span>Godot</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="../DOCS/languages/mysql.png" alt="MySQL">
+                        <span>MySQL</span>
+                    </div>
+
+                    <!-- Tools -->
+                    <div class="skill-item">
+                        <img src="../DOCS/languages/docker.png" alt="Docker">
+                        <span>Docker</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="../DOCS/languages/bash.png" alt="Bash">
+                        <span>Bash</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="../DOCS/languages/sql.png" alt="SQL">
+                        <span>SQL</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Why Space + What I'm Looking For - Côte à côte -->
+            <div class="about-bottom-grid">
+                <div class="about-philosophy">
+                    <h3>🚀 Why Space?</h3>
+                    <p>
+                        The space theme of this portfolio represents my curiosity
+                        and my way of exploring new ideas, technologies and challenges.
+                        Just like space exploration, software development is about
+                        venturing into the unknown, solving complex problems, and
+                        constantly pushing boundaries.
+                    </p>
+                </div>
+
+                <div class="about-goal">
+                    <h3>🎯 What I'm Looking For</h3>
+                    <p>
+                        I'm currently seeking opportunities to continue learning,
+                        gain professional experience and contribute to exciting projects
+                        in software development. Whether it's an internship, apprenticeship,
+                        or collaborative project, I'm eager to apply my skills and grow
+                        as a developer.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Hobbies Section -->
+            <div class="about-hobbies">
+                <h2>Beyond Code</h2>
+                <p class="hobbies-intro">When I'm not coding, I enjoy activities that help me stay focused, creative and
+                    curious.</p>
+
+                <div class="hobbies-grid">
+                    <div class="hobby-item hobby-with-photo">
+                        <div class="hobby-photo">
+                            <img src="../DOCS/about_me/me.jpg" alt="Cycling">
+                        </div>
+                        <h3>Cycling</h3>
+                        <p>Cycling helps me clear my mind and maintain focus. The discipline and endurance required
+                            mirror the persistence needed in debugging and problem-solving.</p>
+                    </div>
+
+                    <div class="hobby-item hobby-with-photo">
+                        <div class="hobby-photo">
+                            <img src="../DOCS/about_me/3d_printing.png" alt="DIY Project">
+                        </div>
+                        <h3>DIY Projects</h3>
+                        <p>Building things with my hands, like my drone project, allows me to understand hardware and
+                            combine creativity with technical skills.</p>
+                    </div>
+
+                    <div class="hobby-item hobby-with-photo">
+                        <div class="hobby-photo">
+                            <img src="../DOCS/about_me/video_game.jpg" alt="DIY Project">
+                        </div>
+                        <h3>Video Games</h3>
+                        <p>Gaming sharpens my strategic thinking and quick decision-making. Many games involve complex
+                            systems and puzzles that enhance my analytical skills.</p>
+                    </div>
+
+                    <div class="hobby-item hobby-with-photo">
+                        <div class="hobby-photo">
+                            <img src="../DOCS/about_me/Star_citizen.png" alt="DIY Project">
+                        </div>
+                        <h3>Space & Sci-Fi</h3>
+                        <p>My passion for space exploration and science fiction fuels my curiosity about technology and
+                            innovation. It inspires me to think beyond current limitations.</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Optional: Photo -->
+            <!-- <div class="about-photo">
+                <img src="../DOCS/e.jpg" alt="Paul Lasjunies">
+            </div> -->
         </div>
+
+        <!-- PROJECTS SECTION -->
         <div class="Projects" id="dProjects" style="display:none;">
-            <div>
-                <h2>
-                    <br> My Projects :
-                </h2>
-                <div class="card">
-                    <div>
-                        <h4>Drone</h4>
-                        <p>Me and my friend <br> We built a drone using : <br><br> Arduino <br> 3D printing <br> Electronic circuit</p>
+            <!-- Hero Projects -->
+            <div class="projects-hero">
+                <h1>Mission Archive</h1>
+                <p class="subtitle">Explore the modules I've built during my journey</p>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="projects-grid">
+
+                <!-- Project 1: Factor -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="../DOCS/projects/factor.png" alt="Factor Project">
+                        <div class="project-overlay">
+                            <span class="project-status">⚡ Completed</span>
+                        </div>
                     </div>
-                    <div>
-                        <img id="image" src="../DOCS/me.png" alt="Drone" style="width: 400px; height: 200px;">
+
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h2>🏭 Factor</h2>
+                            <span class="project-badge">Procedural Game Prototype</span>
+                        </div>
+
+                        <p class="project-description">
+                            Factor is a personal learning project developed with Godot 4.
+                            Inspired by factory-building games, it focuses on procedural map
+                            generation and object-oriented architecture.
+                        </p>
+
+                        <div class="project-tech">
+                            <span class="tech-tag">Godot 4</span>
+                            <span class="tech-tag">GDScript</span>
+                            <span class="tech-tag">OOP</span>
+                            <span class="tech-tag">Procedural Generation</span>
+                        </div>
+
+                        <div class="project-learning">
+                            <h4>🎯 Project Goals</h4>
+                            <p>
+                                Learn procedural map generation, practice object-oriented architecture,
+                                and understand game engine workflows using Godot 4.
+                            </p>
+                        </div>
+
+                        <div class="project-learning">
+                            <h4>💼 My Work</h4>
+                            <p>
+                                Designed a procedural tile-based map system, implemented object-oriented
+                                systems for buildings and resources, and structured the project to remain
+                                modular and extensible.
+                            </p>
+                        </div>
+
+                        <div class="project-learning">
+                            <h4>📚 What I Learned</h4>
+                            <p>
+                                How to structure a game project using OOP principles, balancing flexibility
+                                and performance in procedural systems, and working efficiently with Godot 4
+                                and GDScript.
+                            </p>
+                        </div>
+
+                        <div class="project-links">
+                            <a href="https://github.com/yourusername/factor" target="_blank" class="project-link">
+                                <span>📁 View Code</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <div class="card">
-                    <div>
-                        <h4>JoabBoard</h4>
-                        <p>A web site that propose <br> job offers for the costumers <br><br> An Epitech project</p>
+
+                <!-- Project 2: JobBoard -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="../DOCS/projects/jobboard.png" alt="JobBoard Project">
+                        <div class="project-overlay">
+                            <span class="project-status">⚡ Completed</span>
+                        </div>
                     </div>
-                    <div>
-                        <img id="image" src="../DOCS/JobBoard.png" alt="JobBoard" style="width: 400px; height: 200px;">
+
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h2>💼 JobBoard Platform</h2>
+                            <span class="project-badge">Full Stack Web</span>
+                        </div>
+
+                        <p class="project-description">
+                            A web platform connecting job seekers with opportunities.
+                            Features include job listings, search filters, user authentication,
+                            and an admin dashboard for managing postings. Built as an Epitech project.
+                        </p>
+
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">HTML/CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+
+                        <div class="project-learning">
+                            <h4>🎯 Key Learnings</h4>
+                            <p>
+                                This project enhanced my full-stack development skills,
+                                from designing a database schema to building RESTful APIs
+                                and creating a responsive frontend. I learned to work in a team,
+                                manage Git workflows, and deploy a complete web application.
+                            </p>
+                        </div>
+
+                        <div class="project-links">
+                            <a href="https://github.com/yourusername/jobboard" target="_blank" class="project-link">
+                                <span>📁 View Code</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <h3>
-                    <br> And more incomming...
-                </h3>
+
+                <!-- Project 3: 2D Game -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="../DOCS/projects/2d_game.png" alt="2D Game Project">
+                        <div class="project-overlay">
+                            <span class="project-status">⚡ Completed</span>
+                        </div>
+                    </div>
+
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h2>🎮 Java 2D Game</h2>
+                            <span class="project-badge">Academic Team Project</span>
+                        </div>
+
+                        <p class="project-description">
+                            A 2D game developed in Java as part of a school project.
+                            The goal was to design a functional game while applying
+                            object-oriented programming principles and game logic.
+                        </p>
+
+                        <div class="project-tech">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">LibGDX</span>
+                            <span class="tech-tag">Gradle</span>
+                            <span class="tech-tag">OOP</span>
+                        </div>
+
+                        <div class="project-learning">
+                            <h4>💼 My Role</h4>
+                            <p>
+                                Participated in game logic implementation, worked on object-oriented structure,
+                                and collaborated with a team to design gameplay mechanics.
+                            </p>
+                        </div>
+
+                        <div class="project-learning">
+                            <h4>📚 What I Learned</h4>
+                            <p>
+                                Structuring a Java project using OOP principles, managing game states
+                                and player interactions, and working efficiently in a team environment.
+                            </p>
+                        </div>
+
+                        <div class="project-links">
+                            <a href="https://github.com/yourusername/2dgame" target="_blank" class="project-link">
+                                <span>📁 View Code</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: RTC Platform (en cours) -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="../DOCS/projects/RTC.png" alt="RTC Platform Project">
+                        <div class="project-overlay">
+                            <span class="project-status">🚧 In Progress</span>
+                        </div>
+                    </div>
+
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h2>💬 Real-Time Communication Platform</h2>
+                            <span class="project-badge">Full Stack & Real-Time</span>
+                        </div>
+
+                        <p class="project-description">
+                            A real-time communication platform currently in development.
+                            The project combines modern frontend technologies with a robust backend
+                            architecture supporting WebSocket connections for instant messaging.
+                        </p>
+
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">REST API</span>
+                            <span class="tech-tag">Spring Boot</span>
+                            <span class="tech-tag">WebSocket</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">MongoDB</span>
+                        </div>
+
+                        <div class="project-learning">
+                            <h4>🎯 Project Goals</h4>
+                            <p>
+                                Build a scalable real-time communication system, integrate WebSocket
+                                for instant messaging, and manage a hybrid database architecture using
+                                both SQL and NoSQL solutions.
+                            </p>
+                        </div>
+
+                        <div class="project-learning">
+                            <h4>💼 My Work</h4>
+                            <p>
+                                Developing the React frontend, implementing REST API endpoints,
+                                setting up Spring Boot WebSocket server for real-time features,
+                                and designing the database schema across PostgreSQL and MongoDB.
+                            </p>
+                        </div>
+
+                        <div class="project-learning">
+                            <h4>📚 What I'm Learning</h4>
+                            <p>
+                                Managing real-time bidirectional communication with WebSockets,
+                                architecting a microservices-based backend, and working with both
+                                relational and document-based databases in the same application.
+                            </p>
+                        </div>
+
+                        <div class="project-links">
+                            <a href="https://github.com/yourusername/rtc-platform" target="_blank" class="project-link">
+                                <span>📁 View Code</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: Portfolio (ce site) -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="../DOCS/projects/portfolio.jpg" alt="Portfolio Project">
+                        <div class="project-overlay">
+                            <span class="project-status">🚀 Active</span>
+                        </div>
+                    </div>
+
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h2>🌌 Space Portfolio</h2>
+                            <span class="project-badge">Creative Web</span>
+                        </div>
+
+                        <p class="project-description">
+                            An interactive portfolio website designed as a space journey.
+                            Features include smooth animations, typing effects, glassmorphism UI,
+                            and a responsive design that adapts to all devices.
+                        </p>
+
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">UI/UX Design</span>
+                        </div>
+
+                        <div class="project-learning">
+                            <h4>🎯 Key Learnings</h4>
+                            <p>
+                                Creating this portfolio taught me advanced CSS techniques,
+                                JavaScript animations, and the importance of user experience.
+                                I learned to create a cohesive visual theme and tell a story
+                                through design.
+                            </p>
+                        </div>
+
+                        <div class="project-links">
+                            <a href="https://github.com/yourusername/portfolio" target="_blank" class="project-link">
+                                <span>📁 View Code</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- More Projects Coming -->
+            <div class="projects-footer">
+                <h3>🛸 More Missions Coming Soon</h3>
+                <p>Currently working on new projects. Stay tuned for updates!</p>
             </div>
         </div>
-        <div class="Contacts" id="dContacts" style="display:none;">
-            <div>
-                <h5>Please take the time to send me a message</h5><br>
-            </div>
-            <div class="link">
-                <a id="email" href="mailto:paul.lasjunies@gmail.com?subject=From PortFolio : "> <h2>Send me message <br> Here</h2></a>
-            </div>
-            <div class="cv">
-                <a id="email" href="../DOCS/CV.pdf"> <h2>Download my CV <br> Here</h2></a>
-            </div>
-        </div>
-        
+
+
     </main>
-    <div class="Move">
-        <div id="MovePage" class="MOVEPAGE">
-            <div class="item" id="About" style="display:none;"><h1>About me</h1></div>
-            <div class="item" id="Projects" style="display:none;"><h1>Projects</h1></div>
-            <div class="item" id="textHome" style="display:none;"><h1>Home</h1></div>
-            <div class="item" id="Contacts" style="display:none;"><h1>Contacts</h1></div>
+
+    <!-- CONTACTS SECTION -->
+    <div class="Contacts" id="dContacts" style="display:none;">
+        <!-- Hero Contact -->
+        <div class="contact-hero">
+            <h1>Mission Complete</h1>
+            <p class="subtitle">🛸 You've reached the end of the journey</p>
+        </div>
+
+        <!-- Message de conclusion -->
+        <div class="contact-intro">
+            <p>
+                Thank you for taking the time to explore my portfolio.
+                If you'd like to get in touch, the communication module is now available below.
+            </p>
+        </div>
+
+        <!-- Main Content Grid -->
+        <div class="contact-main">
+            <!-- Left: Contact Cards -->
+            <div class="contact-left">
+                <a href="mailto:paul.lasjunies@gmail.com?subject=From Portfolio" class="contact-card">
+                    <div class="contact-icon">📧</div>
+                    <h3>Email</h3>
+                    <p class="contact-detail">paul.lasjunies@gmail.com</p>
+                    <span class="contact-action">Send a message →</span>
+                </a>
+
+                <a href="https://www.linkedin.com/in/paul-lasjunies-94a04635a/" target="_blank" class="contact-card">
+                    <div class="contact-icon">💼</div>
+                    <h3>LinkedIn</h3>
+                    <p class="contact-detail">Connect with me</p>
+                    <span class="contact-action">View profile →</span>
+                </a>
+
+                <a href="https://github.com/PaulLasjuniesEpitech" target="_blank" class="contact-card">
+                    <div class="contact-icon">💻</div>
+                    <h3>GitHub</h3>
+                    <p class="contact-detail">Check out my code</p>
+                    <span class="contact-action">View repositories →</span>
+                </a>
+
+                <a href="../DOCS/CV.pdf" download class="contact-card">
+                    <div class="contact-icon">📄</div>
+                    <h3>Resume / CV</h3>
+                    <p class="contact-detail">Download my resume</p>
+                    <span class="contact-action">Download PDF →</span>
+                </a>
+            </div>
+
+            <!-- Right: Contact Form -->
+            <div class="contact-right">
+                <div class="contact-form-section">
+                    <h3>📨 Or Send a Direct Message</h3>
+                    <p class="form-subtitle">I'll get back to you as soon as possible</p>
+
+                    <form class="contact-form" action="https://formspree.io/f/mgozkwyb" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                        </div>
+
+                        <div class="form-group" style="flex: 1; display: flex; flex-direction: column;">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Your message..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="form-submit">
+                            <span>Send Message</span>
+                            <span class="submit-icon">🚀</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer / Signature -->
+        <div class="contact-footer">
+            <p class="transmission">End of transmission.</p>
+            <p class="thank-you">Thank you for your visit. See you soon.</p>
+            <div class="footer-decoration">
+                <span>⋆</span>
+                <span>✦</span>
+                <span>⋆</span>
+            </div>
         </div>
     </div>
+
+    <div class="Move">
+        <div id="MovePage" class="MOVEPAGE">
+            <div class="item" id="About" style="display:none;">
+                <h1>About me</h1>
+            </div>
+            <div class="item" id="Projects" style="display:none;">
+                <h1>Projects</h1>
+            </div>
+            <div class="item" id="textHome" style="display:none;">
+                <h1>Home</h1>
+            </div>
+            <div class="item" id="Contacts" style="display:none;">
+                <h1>Contacts</h1>
+            </div>
+        </div>
+    </div>
+
     <script src="../JS/move.js"></script>
     <script src="../JS/intro.js"></script>
 </body>
+
 </html>
