@@ -128,6 +128,24 @@
                 </p>
             </div>
 
+            <!-- What I'm Looking For + Photo -->
+            <div class="about-goal-photo-grid">
+                <div class="about-goal-main">
+                    <h3>🎯 What I'm Looking For</h3>
+                    <p>
+                        I'm currently seeking opportunities to continue learning,
+                        gain professional experience and contribute to exciting projects
+                        in software development. Whether it's an internship, apprenticeship,
+                        or collaborative project, I'm eager to apply my skills and grow
+                        as a developer.
+                    </p>
+                </div>
+
+                <!-- <div class="about-photo-center">
+            <img src="DOCS/about_me/me.jpg" alt="Paul Lasjunies">
+        </div> -->
+            </div>
+
             <!-- My Approach - Deux colonnes -->
             <div class="about-grid">
                 <div class="about-card">
@@ -200,28 +218,35 @@
                 </div>
             </div>
 
-            <!-- Why Space + What I'm Looking For - Côte à côte -->
-            <div class="about-bottom-grid">
-                <div class="about-philosophy">
-                    <h3>🚀 Why Space?</h3>
-                    <p>
-                        The space theme of this portfolio represents my curiosity
-                        and my way of exploring new ideas, technologies and challenges.
-                        Just like space exploration, software development is about
-                        venturing into the unknown, solving complex problems, and
-                        constantly pushing boundaries.
-                    </p>
-                </div>
+            <!-- Udemy Certifications -->
+            <div class="about-certifications">
+                <h2>📜 Udemy Certifications</h2>
+                <p class="certifications-intro">Continuous learning through online courses</p>
 
-                <div class="about-goal">
-                    <h3>🎯 What I'm Looking For</h3>
-                    <p>
-                        I'm currently seeking opportunities to continue learning,
-                        gain professional experience and contribute to exciting projects
-                        in software development. Whether it's an internship, apprenticeship,
-                        or collaborative project, I'm eager to apply my skills and grow
-                        as a developer.
-                    </p>
+                <div class="certifications-list">
+                    <div class="certification-item">
+                        <div class="certification-icon">🎓</div>
+                        <div class="certification-content">
+                            <h4>Complete Python Bootcamp</h4>
+                            <p>Advanced Python programming and data structures</p>
+                        </div>
+                    </div>
+
+                    <div class="certification-item">
+                        <div class="certification-icon">🎓</div>
+                        <div class="certification-content">
+                            <h4>Web Development Masterclass</h4>
+                            <p>Full-stack development with modern frameworks</p>
+                        </div>
+                    </div>
+
+                    <div class="certification-item">
+                        <div class="certification-icon">🎓</div>
+                        <div class="certification-content">
+                            <h4>Docker & Kubernetes</h4>
+                            <p>Container orchestration and deployment</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -252,7 +277,7 @@
 
                     <div class="hobby-item hobby-with-photo">
                         <div class="hobby-photo">
-                            <img src="DOCS/about_me/video_game.jpg" alt="DIY Project">
+                            <img src="DOCS/about_me/video_game.jpg" alt="Video Games">
                         </div>
                         <h3>Video Games</h3>
                         <p>Gaming sharpens my strategic thinking and quick decision-making. Many games involve complex
@@ -261,18 +286,18 @@
 
                     <div class="hobby-item hobby-with-photo">
                         <div class="hobby-photo">
-                            <img src="DOCS/about_me/Star_citizen.png" alt="DIY Project">
+                            <img src="DOCS/about_me/Star_citizen.png" alt="Space & Sci-Fi">
                         </div>
                         <h3>Space & Sci-Fi</h3>
                         <p>My passion for space exploration and science fiction fuels my curiosity about technology and
                             innovation. It inspires me to think beyond current limitations.</p>
                     </div>
-
                 </div>
             </div>
+        </div>
 
-            <!-- Optional: Photo -->
-            <!-- <div class="about-photo">
+        <!-- Optional: Photo -->
+        <!-- <div class="about-photo">
                 <img src="../DOCS/e.jpg" alt="Paul Lasjunies">
             </div> -->
         </div>
@@ -290,16 +315,20 @@
 
                 <!-- Project 1: Factor -->
                 <div class="project-card">
+                    <div class="project-title-top">
+                        <h2>🏭 Factor</h2>
+                        <span class="project-type-badge">Personal Project</span>
+                    </div>
+
                     <div class="project-image">
                         <img src="DOCS/projects/factor.png" alt="Factor Project">
                         <div class="project-overlay">
-                            <span class="project-status">⚡ Completed</span>
+                            <span class="project-status">🚧 In Progress</span>
                         </div>
                     </div>
 
                     <div class="project-content">
                         <div class="project-header">
-                            <h2>🏭 Factor</h2>
                             <span class="project-badge">Procedural Game Prototype</span>
                         </div>
 
@@ -350,8 +379,100 @@
                     </div>
                 </div>
 
-                <!-- Project 2: JobBoard -->
+                <!-- Project 2: Drone (NOUVEAU - à placer en premier) -->
                 <div class="project-card">
+                    <div class="project-title-top">
+                        <h2>🚁 Autonomous Drone</h2>
+                        <span class="project-type-badge">Personal Project</span>
+                    </div>
+
+                    <div class="project-image">
+                        <img src="DOCS/projects/drone.jpg" alt="Drone Project">
+                        <div class="project-overlay">
+                            <span class="project-status">🚧 In Progress</span>
+                        </div>
+                    </div>
+
+                    <div class="project-content">
+                        <div class="project-header">
+                            <span class="project-badge">Hardware & Software</span>
+                        </div>
+
+                        <p class="project-description">
+                            Built a fully functional drone from scratch with a friend.
+                            The project combines 3D-printed parts designed in Fusion 360, Arduino programming,
+                            and custom electronic circuits for flight control and stabilization.
+                            Leveraging my EEA (Electronics, Electrical Engineering and Automation) background from Paul
+                            Sabatier University.
+                        </p>
+
+                        <div class="project-tech">
+                            <span class="tech-tag">Arduino</span>
+                            <span class="tech-tag">3D Printing</span>
+                            <span class="tech-tag">Fusion 360</span>
+                            <span class="tech-tag">Creality</span>
+                            <span class="tech-tag">Electronics</span>
+                            <span class="tech-tag">EEA</span>
+                        </div>
+
+                        <div class="project-learning">
+                            <h4>🎯 Project Goals</h4>
+                            <p>
+                                Design and build a custom autonomous drone combining software programming,
+                                3D modeling, electronics knowledge, and mechanical engineering.
+                                Integrate flight control systems and sensor data processing for stable flight.
+                            </p>
+                        </div>
+
+                        <div class="project-learning">
+                            <h4>💼 My Work</h4>
+                            <p>
+                                Designed custom drone frame and parts in Fusion 360, 3D printed components using
+                                Creality printer,
+                                programmed flight controller in C++ on Arduino platform, wired and integrated electronic
+                                circuits
+                                (ESCs, motors, sensors), and applied EEA principles learned at Paul Sabatier University
+                                for power management and signal processing.
+                            </p>
+                        </div>
+
+                        <div class="project-learning">
+                            <h4>📚 What I Learned</h4>
+                            <p>
+                                How to integrate hardware and software systems, manage sensor data in real-time,
+                                design mechanical parts for 3D printing, understand electronic circuit design and power
+                                distribution,
+                                debug physical systems, and apply theoretical EEA knowledge to practical applications.
+                                This project strengthened my multidisciplinary problem-solving skills.
+                            </p>
+                        </div>
+
+                        <div class="project-learning">
+                            <h4>🎓 Academic Background</h4>
+                            <p>
+                                This project builds on my Electronics, Electrical Engineering and Automation (EEA)
+                                education
+                                from Paul Sabatier University, where I learned circuit design, signal processing,
+                                control systems, and embedded programming fundamentals.
+                            </p>
+                        </div>
+
+                        <div class="project-links">
+                            <a href="https://github.com/yourusername/drone" target="_blank" class="project-link">
+                                <span>📁 View Code</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Project 3: JobBoard -->
+                <div class="project-card">
+                    <div class="project-title-top">
+                        <h2>💼 JobBoard Platform</h2>
+                        <span class="project-type-badge">Epitech Project</span>
+                    </div>
+
                     <div class="project-image">
                         <img src="DOCS/projects/jobboard.png" alt="JobBoard Project">
                         <div class="project-overlay">
@@ -361,7 +482,6 @@
 
                     <div class="project-content">
                         <div class="project-header">
-                            <h2>💼 JobBoard Platform</h2>
                             <span class="project-badge">Full Stack Web</span>
                         </div>
 
@@ -397,8 +517,13 @@
                     </div>
                 </div>
 
-                <!-- Project 3: 2D Game -->
+                <!-- Project 4: 2D Game -->
                 <div class="project-card">
+                    <div class="project-title-top">
+                        <h2>🎮 Java 2D Game</h2>
+                        <span class="project-type-badge">Epitech Project</span>
+                    </div>
+
                     <div class="project-image">
                         <img src="DOCS/projects/2d_game.png" alt="2D Game Project">
                         <div class="project-overlay">
@@ -408,7 +533,6 @@
 
                     <div class="project-content">
                         <div class="project-header">
-                            <h2>🎮 Java 2D Game</h2>
                             <span class="project-badge">Academic Team Project</span>
                         </div>
 
@@ -449,8 +573,13 @@
                     </div>
                 </div>
 
-                <!-- Project 4: RTC Platform (en cours) -->
+                <!-- Project 5: RTC Platform -->
                 <div class="project-card">
+                    <div class="project-title-top">
+                        <h2>💬 Real-Time Communication Platform</h2>
+                        <span class="project-type-badge">Epitech Project</span>
+                    </div>
+
                     <div class="project-image">
                         <img src="DOCS/projects/RTC.png" alt="RTC Platform Project">
                         <div class="project-overlay">
@@ -460,7 +589,6 @@
 
                     <div class="project-content">
                         <div class="project-header">
-                            <h2>💬 Real-Time Communication Platform</h2>
                             <span class="project-badge">Full Stack & Real-Time</span>
                         </div>
 
@@ -514,8 +642,13 @@
                     </div>
                 </div>
 
-                <!-- Project 5: Portfolio (ce site) -->
+                <!-- Project 6: Portfolio -->
                 <div class="project-card">
+                    <div class="project-title-top">
+                        <h2>🌌 Space Portfolio</h2>
+                        <span class="project-type-badge">Personal Project</span>
+                    </div>
+
                     <div class="project-image">
                         <img src="DOCS/projects/portfolio.jpg" alt="Portfolio Project">
                         <div class="project-overlay">
@@ -525,7 +658,6 @@
 
                     <div class="project-content">
                         <div class="project-header">
-                            <h2>🌌 Space Portfolio</h2>
                             <span class="project-badge">Creative Web</span>
                         </div>
 

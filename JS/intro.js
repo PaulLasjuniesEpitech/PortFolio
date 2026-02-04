@@ -21,313 +21,60 @@ function deleteCookie(name) {
     document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 }
 
-// Vérifier si l'intro a déjà été vue
 function hasSeenIntro() {
     return getCookie('intro_completed') === 'true';
 }
 
-function markIntroAsCompleted() {
-    setCookie('intro_completed', 'true', 1); // Cookie valable 1 heure
+function markIntroAsCompleted(mode) {
+    setCookie('intro_completed', 'true', 1);
+    setCookie('portfolio_mode', mode, 24); // Sauvegarde le mode choisi pour 24h
 }
 
-// Fonction globale pour réinitialiser l'intro
+function getPortfolioMode() {
+    return getCookie('portfolio_mode') || 'rh'; // Par défaut: mode RH
+}
+
 window.resetIntro = function() {
     deleteCookie('intro_completed');
+    deleteCookie('portfolio_mode');
     location.reload();
 }
 
 // ========== CONFIGURATION ==========
 const TYPING_SPEED = 50;
-const DELETING_SPEED = 10;
-const TYPO_DELETE_SPEED = 50;
 
-// ========== TEXTES AVEC TYPOS ==========
-const texts = [
-    {
-        text: "My name is\nPaul Lasjunies\nI'm a student at Epitech.\nAnd\nI'm glad to present you\nmy portfolio!\n\nPlease use the controls above",
-        typos: [
-            { word: "Paul", wrong: "Pual", delay: 500 }
-        ]
-    },
-    {
-        text: "I chose a very specific format for this portfolio.\nNot something classic.",
-        typos: [
-            { word: "portfolio", wrong: "portofolio", delay: 600 }
-        ]
-    },
-    {
-        text: "I'm a huge fan of space, science fiction\nand space exploration.",
-        typos: [
-            { word: "science", wrong: "sceince", delay: 500 }
-        ]
-    },
-    {
-        text: "For me, discovering new technologies\nfeels a lot like exploring the unknown.",
-        typos: [
-            { word: "technologies", wrong: "technolgies", delay: 700 }
-        ]
-    },
-    {
-        text: "So I decided to present my projects\nas a space journey.\nEach section represents a place\ninside the spaceship during the trip.",
-        typos: []
-    },
-    {
-        text: "At the end of this short introduction,\nyou'll arrive at my homepage.",
-        typos: []
-    },
-    {
-        text: "If you want to explore the other parts of my portfolio,\nyou'll need to click on the \"move\" button\nat the top center of the page.",
-        typos: [
-            { word: "portfolio", wrong: "portfollio", delay: 500 }
-        ]
-    },
-    {
-        text: "You can then choose which section\nyou'd like to visit next and continue your journey.",
-        typos: []
-    },
-    {
-        text: "Please note that if you decide to go to the contact page,\nit will mark the end of our journey.\nBut even then, the spaceship will remain accessible,\nallowing you to revisit any area of the mission.",
-        typos: []
-    },
-    {
-        text: "I hope you'll enjoy the experience\nas much as I enjoyed creating it.",
-        typos: [
-            { word: "creating", wrong: "creatng", delay: 600 }
-        ]
-    },
-    {
-        text: "I wish you a pleasant trip!",
-        typos: []
-    }
-];
+// ========== TEXTE UNIQUE ==========
+const introText = "My name is\nPaul Lasjunies\nI'm a student at Epitech.\nAnd\nI'm glad to present you\nmy portfolio!";
 
-// ========== VARIABLES GLOBALES ==========
-let currentIndex = 0;
 let isTyping = false;
-let animationEnabled = true;
 
 // ========== FONCTIONS UTILITAIRES ==========
 function escapeHtml(text) {
     return text.replace(/\n/g, '<br>');
 }
 
-function updateButtons() {
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    
-    if (prevBtn) prevBtn.disabled = currentIndex === 0;
-    if (nextBtn) nextBtn.disabled = false;
-}
-
-// ========== AFFICHAGE INSTANTANÉ ==========
-function displayTextInstantly(textObj) {
-    const typingText = document.getElementById('typingText');
-    if (!typingText) return;
-    
-    typingText.innerHTML = escapeHtml(textObj.text);
-}
-
-// ========== ANIMATION DE FRAPPE ==========
-function typeText(textObj) {
+function typeText(text, callback) {
     const typingText = document.getElementById('typingText');
     if (!typingText) return;
     
     isTyping = true;
     let displayText = '';
     let charIndex = 0;
-    const fullText = textObj.text;
     
-    // Si pas de typos, frappe normale
-    if (!textObj.typos || textObj.typos.length === 0) {
-        const typeInterval = setInterval(() => {
-            if (charIndex < fullText.length) {
-                displayText += fullText[charIndex];
-                typingText.innerHTML = escapeHtml(displayText) + '<span class="cursor">_</span>';
-                charIndex++;
-            } else {
-                clearInterval(typeInterval);
-                typingText.innerHTML = escapeHtml(displayText);
-                isTyping = false;
-            }
-        }, TYPING_SPEED);
-        return;
-    }
-    
-    // Avec typos - prendre la première typo
-    const typo = textObj.typos[0];
-    const wrongWord = typo.word;
-    const wrongVersion = typo.wrong;
-    const wrongIndex = fullText.indexOf(wrongWord);
-    
-    if (wrongIndex === -1) {
-        console.error('Wrong word "' + wrongWord + '" not found in text');
-        displayTextInstantly(textObj);
-        isTyping = false;
-        return;
-    }
-    
-    // Phase 1: Taper jusqu'au début du mot avec typo
-    const typeBeforeTypo = setInterval(() => {
-        if (charIndex < wrongIndex) {
-            displayText += fullText[charIndex];
+    const typeInterval = setInterval(() => {
+        if (charIndex < text.length) {
+            displayText += text[charIndex];
             typingText.innerHTML = escapeHtml(displayText) + '<span class="cursor">_</span>';
             charIndex++;
         } else {
-            clearInterval(typeBeforeTypo);
-            
-            // Phase 2: Taper le mot avec une faute
-            let typoIndex = 0;
-            const typeTypo = setInterval(() => {
-                if (typoIndex < wrongVersion.length) {
-                    displayText += wrongVersion[typoIndex];
-                    typingText.innerHTML = escapeHtml(displayText) + '<span class="cursor">_</span>';
-                    typoIndex++;
-                } else {
-                    clearInterval(typeTypo);
-                    
-                    // Phase 3: Pause
-                    setTimeout(() => {
-                        // Phase 4: Effacer la faute
-                        const deleteTypo = setInterval(() => {
-                            if (displayText.length > wrongIndex) {
-                                displayText = displayText.slice(0, -1);
-                                typingText.innerHTML = escapeHtml(displayText) + '<span class="cursor">_</span>';
-                            } else {
-                                clearInterval(deleteTypo);
-                                
-                                // Phase 5: Taper correctement
-                                let correctIndex = 0;
-                                const typeCorrect = setInterval(() => {
-                                    if (correctIndex < wrongWord.length) {
-                                        displayText += wrongWord[correctIndex];
-                                        typingText.innerHTML = escapeHtml(displayText) + '<span class="cursor">_</span>';
-                                        correctIndex++;
-                                        charIndex++;
-                                    } else {
-                                        clearInterval(typeCorrect);
-                                        
-                                        // Phase 6: Finir le texte
-                                        const typeRest = setInterval(() => {
-                                            if (charIndex < fullText.length) {
-                                                displayText += fullText[charIndex];
-                                                typingText.innerHTML = escapeHtml(displayText) + '<span class="cursor">_</span>';
-                                                charIndex++;
-                                            } else {
-                                                clearInterval(typeRest);
-                                                typingText.innerHTML = escapeHtml(displayText);
-                                                isTyping = false;
-                                            }
-                                        }, TYPING_SPEED);
-                                    }
-                                }, TYPING_SPEED);
-                            }
-                        }, TYPO_DELETE_SPEED);
-                    }, typo.delay || 500);
-                }
-            }, TYPING_SPEED);
+            clearInterval(typeInterval);
+            typingText.innerHTML = escapeHtml(displayText);
+            isTyping = false;
+            if (callback) callback();
         }
     }, TYPING_SPEED);
 }
 
-// ========== NAVIGATION ==========
-function showPreviousText() {
-    if (isTyping || currentIndex === 0) return;
-    
-    currentIndex--;
-    if (animationEnabled) {
-        typeText(texts[currentIndex]);
-    } else {
-        displayTextInstantly(texts[currentIndex]);
-    }
-    updateButtons();
-}
-
-function showNextText() {
-    if (isTyping) return;
-    
-    if (currentIndex < texts.length - 1) {
-        currentIndex++;
-        if (animationEnabled) {
-            typeText(texts[currentIndex]);
-        } else {
-            displayTextInstantly(texts[currentIndex]);
-        }
-        updateButtons();
-    } else {
-        // Dernier texte atteint
-        if (animationEnabled) {
-            setTimeout(() => {
-                createStartButton();
-            }, 1000);
-        } else {
-            createStartButton();
-        }
-    }
-}
-
-
-// ========== TOGGLE ANIMATION ==========
-function toggleAnimation() {
-    const animationToggle = document.getElementById('animationToggle');
-    if (!animationToggle) return;
-    
-    animationEnabled = animationToggle.checked;
-    
-    // Réafficher le texte actuel selon le mode
-    if (animationEnabled) {
-        typeText(texts[currentIndex]);
-    } else {
-        displayTextInstantly(texts[currentIndex]);
-    }
-}
-
-// ========== INITIALISATION ==========
-document.addEventListener('DOMContentLoaded', () => {
-    // Vérifier si l'intro a déjà été complétée
-    if (hasSeenIntro()) {
-        // Skip l'intro et aller directement à la home page
-        const intro = document.getElementById('intro');
-        const homePage = document.getElementById('home');
-        const homeSection = document.getElementById('dHOME');
-        
-        if (intro) intro.style.display = 'none';
-        if (homePage) homePage.style.display = 'flex';
-        if (homeSection) homeSection.scrollTop = 0;
-        
-        console.log('Intro déjà vue, passage direct à la home page');
-        return; // Arrêter l'exécution du reste du script
-    }
-    
-    // Sinon, lancer l'intro normalement
-    const typingText = document.getElementById('typingText');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    const animationToggle = document.getElementById('animationToggle');
-
-    if (!typingText) {
-        console.error('Element #typingText not found');
-        return;
-    }
-
-    // Initialisation
-    updateButtons();
-    
-    // Animation automatique au démarrage
-    if (animationEnabled) {
-        setTimeout(() => {
-            typeText(texts[currentIndex]);
-        }, 500);
-    } else {
-        displayTextInstantly(texts[currentIndex]);
-    }
-
-    // Event listeners
-    if (prevBtn) prevBtn.addEventListener('click', showPreviousText);
-    if (nextBtn) nextBtn.addEventListener('click', showNextText);
-    if (animationToggle) animationToggle.addEventListener('change', toggleAnimation);
-});
-
-// Fonction pour afficher le bouton Move
 function showMoveButton() {
     const moveButton = document.getElementById('homemouvement');
     if (moveButton) {
@@ -335,11 +82,256 @@ function showMoveButton() {
     }
 }
 
+function createModeSelection() {
+    const typingText = document.getElementById('typingText');
+    if (!typingText) return;
+    
+    typingText.innerHTML = `
+        ${escapeHtml(introText)}
+        <br><br>
+        <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 20px;">
+            <button id="rhModeBtn" style="
+                background: linear-gradient(135deg, rgba(0, 255, 136, 0.2), rgba(0, 255, 136, 0.1));
+                border: 2px solid rgba(0, 255, 136, 0.5);
+                color: #00ff88;
+                padding: 15px 30px;
+                font-size: 18px;
+                border-radius: 10px;
+                cursor: pointer;
+                font-family: 'SUSE mono';
+                transition: all 0.3s ease;
+            " onmouseover="this.style.background='linear-gradient(135deg, rgba(0, 255, 136, 0.3), rgba(0, 255, 136, 0.2))'; this.style.transform='translateY(-2px)'" 
+               onmouseout="this.style.background='linear-gradient(135deg, rgba(0, 255, 136, 0.2), rgba(0, 255, 136, 0.1))'; this.style.transform='translateY(0)'">
+                💼 Quick View (For Recruiters)
+            </button>
+            
+            <button id="techModeBtn" style="
+                background: linear-gradient(135deg, rgba(138, 43, 226, 0.2), rgba(138, 43, 226, 0.1));
+                border: 2px solid rgba(138, 43, 226, 0.5);
+                color: #b19cd9;
+                padding: 15px 30px;
+                font-size: 18px;
+                border-radius: 10px;
+                cursor: pointer;
+                font-family: 'SUSE mono';
+                transition: all 0.3s ease;
+            " onmouseover="this.style.background='linear-gradient(135deg, rgba(138, 43, 226, 0.3), rgba(138, 43, 226, 0.2))'; this.style.transform='translateY(-2px)'" 
+               onmouseout="this.style.background='linear-gradient(135deg, rgba(138, 43, 226, 0.2), rgba(138, 43, 226, 0.1))'; this.style.transform='translateY(0)'">
+                🚀 Start Journey (Immersive Experience)
+            </button>
+        </div>
+    `;
+    
+    const rhBtn = document.getElementById('rhModeBtn');
+    const techBtn = document.getElementById('techModeBtn');
+    
+    if (rhBtn) {
+        rhBtn.addEventListener('click', () => {
+            markIntroAsCompleted('rh');
+            initPortfolio('rh');
+        });
+    }
+    
+    if (techBtn) {
+        techBtn.addEventListener('click', () => {
+            // Afficher popup "Work in Progress"
+            showWorkInProgressPopup();
+        });
+    }
+}
+
+function showWorkInProgressPopup() {
+    const popup = document.createElement('div');
+    popup.style.cssText = `
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(0, 0, 0, 0.95);
+        backdrop-filter: blur(20px);
+        border: 2px solid rgba(138, 43, 226, 0.5);
+        border-radius: 20px;
+        padding: 40px;
+        z-index: 1000;
+        text-align: center;
+        max-width: 500px;
+        animation: fadeIn 0.3s ease;
+    `;
+    
+    popup.innerHTML = `
+        <h2 style="color: #b19cd9; margin-bottom: 20px; font-size: 32px;">🚧 Work in Progress</h2>
+        <p style="margin-bottom: 30px; line-height: 1.6;">
+            The immersive experience is currently under development.<br>
+            Please use the Quick View mode for now.
+        </p>
+        <button id="closePopup" style="
+            background: linear-gradient(135deg, rgba(0, 255, 136, 0.2), rgba(0, 255, 136, 0.1));
+            border: 2px solid rgba(0, 255, 136, 0.5);
+            color: #00ff88;
+            padding: 12px 30px;
+            font-size: 16px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-family: 'SUSE mono';
+            transition: all 0.3s ease;
+        ">
+            Got it!
+        </button>
+    `;
+    
+    document.body.appendChild(popup);
+    
+    document.getElementById('closePopup').addEventListener('click', () => {
+        popup.remove();
+    });
+}
+
+function initPortfolio(mode) {
+    const intro = document.getElementById('intro');
+    const homePage = document.getElementById('home');
+    const homeSection = document.getElementById('dHOME');
+    
+    if (intro) intro.style.display = 'none';
+    if (homePage) homePage.style.display = 'flex';
+    if (homeSection) homeSection.scrollTop = 0;
+    
+    if (mode === 'rh') {
+        setupRHMode();
+    } else {
+        setupTechMode();
+    }
+}
+
+function setupRHMode() {
+    // Masquer le bouton Move
+    const moveButton = document.getElementById('homemouvement');
+    if (moveButton) moveButton.style.display = 'none';
+    
+    // Afficher la navigation RH
+    showRHNav();
+}
+
+function setupTechMode() {
+    // Afficher le bouton Move
+    showMoveButton();
+    
+    // Masquer la navigation RH
+    hideRHNav();
+}
+
+function showRHNav() {
+    const nav = document.querySelector('nav');
+    if (!nav) return;
+    
+    // Vérifier si la nav RH existe déjà
+    if (document.getElementById('rh-nav')) return;
+    
+    const rhNav = document.createElement('div');
+    rhNav.id = 'rh-nav';
+    rhNav.style.cssText = `
+        position: absolute;
+        left: 60%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 15px;
+    `;
+    
+    const buttons = [
+        { id: 'nav-home', text: 'Home', section: 'dHOME' },
+        { id: 'nav-about', text: 'About', section: 'dAbout_me' },
+        { id: 'nav-projects', text: 'Projects', section: 'dProjects' },
+        { id: 'nav-contact', text: 'Contact', section: 'dContacts' },
+        { id: 'nav-intro', text: 'Intro', action: 'intro' }
+    ];
+    
+    buttons.forEach(btn => {
+        const button = document.createElement('button');
+        button.id = btn.id;
+        button.textContent = btn.text;
+        button.style.cssText = `
+            background-color: transparent;
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            border-radius: 5px;
+            padding: 5px 10px;
+            font-family: "SUSE mono";
+            transition: all 0.3s ease;
+            font-size: 14px;
+        `;
+        
+        button.addEventListener('mouseover', () => {
+            button.style.background = 'rgba(255, 255, 255, 0.3)';
+        });
+        
+        button.addEventListener('mouseout', () => {
+            button.style.background = 'transparent';
+        });
+        
+        button.addEventListener('click', () => {
+            if (btn.action === 'intro') {
+                resetIntro();
+            } else {
+                navigateToSection(btn.section);
+            }
+        });
+        
+        rhNav.appendChild(button);
+    });
+    
+    // Bouton Tech Mode (à droite)
+    const techModeBtn = document.createElement('button');
+    techModeBtn.id = 'switch-tech';
+    techModeBtn.textContent = '🚀 Tech Mode';
+    techModeBtn.style.cssText = `
+        position: absolute;
+        right: 20px;
+        background: linear-gradient(135deg, rgba(138, 43, 226, 0.2), rgba(138, 43, 226, 0.1));
+        color: #b19cd9;
+        border: 1px solid rgba(138, 43, 226, 0.3);
+        cursor: pointer;
+        border-radius: 5px;
+        padding: 5px 15px;
+        font-family: "SUSE mono";
+        transition: all 0.3s ease;
+        font-size: 14px;
+    `;
+    
+    techModeBtn.addEventListener('click', () => {
+        showWorkInProgressPopup();
+    });
+    
+    nav.appendChild(rhNav);
+    nav.appendChild(techModeBtn);
+}
+
+function hideRHNav() {
+    const rhNav = document.getElementById('rh-nav');
+    const techBtn = document.getElementById('switch-tech');
+    if (rhNav) rhNav.remove();
+    if (techBtn) techBtn.remove();
+}
+
+function navigateToSection(sectionId) {
+    // Cacher toutes les sections
+    const sections = ['dHOME', 'dAbout_me', 'dProjects', 'dContacts'];
+    sections.forEach(id => {
+        const section = document.getElementById(id);
+        if (section) section.style.display = 'none';
+    });
+    
+    // Afficher la section demandée
+    const targetSection = document.getElementById(sectionId);
+    if (targetSection) {
+        targetSection.style.display = 'flex';
+        targetSection.scrollTop = 0;
+    }
+}
+
 // ========== INITIALISATION ==========
 document.addEventListener('DOMContentLoaded', () => {
-    // Vérifier si l'intro a déjà été complétée
     if (hasSeenIntro()) {
-        // Skip l'intro et aller directement à la home page
+        const mode = getPortfolioMode();
         const intro = document.getElementById('intro');
         const homePage = document.getElementById('home');
         const homeSection = document.getElementById('dHOME');
@@ -348,56 +340,24 @@ document.addEventListener('DOMContentLoaded', () => {
         if (homePage) homePage.style.display = 'flex';
         if (homeSection) homeSection.scrollTop = 0;
         
-        // IMPORTANT: Afficher le bouton Move
-        showMoveButton();
+        initPortfolio(mode);
         
-        console.log('Intro déjà vue, passage direct à la home page');
-        return; // Arrêter l'exécution du reste du script
+        console.log('Intro déjà vue, mode:', mode);
+        return;
     }
     
-    // ... reste du code inchangé
-});
-
-function createStartButton() {
     const typingText = document.getElementById('typingText');
-    if (!typingText) return;
-    
-    typingText.innerHTML = `
-        ${escapeHtml(texts[currentIndex].text)}
-        <br><br>
-        <button id="startJourneyBtn" style="
-            background: linear-gradient(135deg, rgba(0, 255, 136, 0.2), rgba(0, 255, 136, 0.1));
-            border: 2px solid rgba(0, 255, 136, 0.5);
-            color: #00ff88;
-            padding: 15px 30px;
-            font-size: 18px;
-            border-radius: 10px;
-            cursor: pointer;
-            font-family: 'SUSE mono';
-            transition: all 0.3s ease;
-        " onmouseover="this.style.background='linear-gradient(135deg, rgba(0, 255, 136, 0.3), rgba(0, 255, 136, 0.2))'; this.style.transform='translateY(-2px)'" 
-           onmouseout="this.style.background='linear-gradient(135deg, rgba(0, 255, 136, 0.2), rgba(0, 255, 136, 0.1))'; this.style.transform='translateY(0)'">
-            Start Journey ►
-        </button>
-    `;
-    
-    const startBtn = document.getElementById('startJourneyBtn');
-    if (startBtn) {
-        startBtn.addEventListener('click', () => {
-            // Marquer l'intro comme complétée
-            markIntroAsCompleted();
-            
-            // Transition vers la home page
-            const intro = document.getElementById('intro');
-            const homePage = document.getElementById('home');
-            const homeSection = document.getElementById('dHOME');
-            
-            if (intro) intro.style.display = 'none';
-            if (homePage) homePage.style.display = 'flex';
-            if (homeSection) homeSection.scrollTop = 0;
-            
-            // IMPORTANT: Afficher le bouton Move
-            showMoveButton();
-        });
+    if (!typingText) {
+        console.error('Element #typingText not found');
+        return;
     }
-}
+    
+    // Désactiver les contrôles
+    const controls = document.querySelector('.intro-controls');
+    if (controls) controls.style.display = 'none';
+    
+    // Lancer l'animation puis afficher les boutons
+    setTimeout(() => {
+        typeText(introText, createModeSelection);
+    }, 500);
+});

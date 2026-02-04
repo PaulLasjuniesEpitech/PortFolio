@@ -725,50 +725,50 @@ h1{
     margin: 0 auto;
 }
 
-/* About Me - Skills avec style violet */
 .skill-item {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
     padding: 15px;
-    background: rgba(138, 43, 226, 0.05);
+    background: rgba(138, 43, 226, 0.15); /* Augmenté de 0.05 à 0.15 */
     border-radius: 12px;
-    border: 1px solid rgba(138, 43, 226, 0.2);
+    border: 1px solid rgba(138, 43, 226, 0.4); /* Augmenté de 0.2 à 0.4 */
     transition: all 0.3s ease;
     width: 100%;
 }
 
 .skill-item:hover {
-    background: rgba(138, 43, 226, 0.1);
+    background: rgba(138, 43, 226, 0.25); /* Augmenté de 0.1 à 0.25 */
     transform: translateY(-5px);
-    border-color: rgba(138, 43, 226, 0.4);
-    box-shadow: 0 8px 20px rgba(138, 43, 226, 0.2);
+    border-color: rgba(138, 43, 226, 0.6); /* Augmenté de 0.4 à 0.6 */
+    box-shadow: 0 8px 20px rgba(138, 43, 226, 0.4); /* Augmenté de 0.2 à 0.4 */
 }
 
 .skill-item img {
     width: 60px;
     height: 60px;
     object-fit: contain;
-    filter: drop-shadow(0 0 10px rgba(138, 43, 226, 0.3));
+    filter: drop-shadow(0 0 10px rgba(138, 43, 226, 0.5)); /* Augmenté de 0.3 à 0.5 */
 }
 
 .skill-item span {
     font-size: 14px;
-    color: #b19cd9;
-    opacity: 0.9;
+    color: #d4a5ff; /* Couleur plus claire - changé de #b19cd9 */
+    opacity: 1; /* Augmenté de 0.9 à 1 */
     text-align: center;
-    font-weight: 500;
+    font-weight: 600; /* Augmenté de 500 à 600 */
 }
 
-/* Projects - Tech tags en violet */
+/* Projects - Tech tags en violet PLUS VISIBLE */
 .tech-tag {
-    background: rgba(138, 43, 226, 0.1);
-    border: 1px solid rgba(138, 43, 226, 0.3);
+    background: rgba(138, 43, 226, 0.2); /* Augmenté de 0.1 à 0.2 */
+    border: 1px solid rgba(138, 43, 226, 0.5); /* Augmenté de 0.3 à 0.5 */
     padding: 6px 15px;
     border-radius: 15px;
     font-size: 13px;
-    color: #b19cd9;
+    color: #d4a5ff; /* Couleur plus claire - changé de #b19cd9 */
+    font-weight: 600; /* Ajouté pour plus de visibilité */
 }
 
 /* Projects - Liens */
@@ -912,14 +912,14 @@ h1{
     }
 }
 
-/* Hobbies Section */
+/* Hobbies avec violet PLUS VISIBLE */
 .about-hobbies {
-    background: linear-gradient(135deg, rgba(138, 43, 226, 0.1), rgba(75, 0, 130, 0.1));
+    background: linear-gradient(135deg, rgba(138, 43, 226, 0.2), rgba(75, 0, 130, 0.2)); /* Augmenté de 0.1 */
     backdrop-filter: blur(10px);
     border-radius: 15px;
     padding: 35px;
     margin-bottom: 30px;
-    border: 1px solid rgba(138, 43, 226, 0.3);
+    border: 1px solid rgba(138, 43, 226, 0.5); /* Augmenté de 0.3 à 0.5 */
     position: relative;
     overflow: hidden;
 }
@@ -931,7 +931,7 @@ h1{
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(90deg, transparent, rgba(138, 43, 226, 0.5), transparent);
+    background: linear-gradient(90deg, transparent, rgba(138, 43, 226, 0.8), transparent); /* Augmenté de 0.5 à 0.8 */
 }
 
 .about-hobbies h2 {
@@ -958,20 +958,27 @@ h1{
 }
 
 .hobby-item {
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(255, 255, 255, 0.05); /* Augmenté de 0.03 à 0.05 */
     backdrop-filter: blur(5px);
     border-radius: 12px;
     padding: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15); /* Augmenté de 0.1 à 0.15 */
     transition: all 0.3s ease;
     text-align: center;
 }
 
 .hobby-item:hover {
-    background: rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.08); /* Augmenté de 0.06 à 0.08 */
     transform: translateY(-5px);
-    border-color: rgba(138, 43, 226, 0.4);
-    box-shadow: 0 8px 20px rgba(138, 43, 226, 0.2);
+    border-color: rgba(138, 43, 226, 0.6); /* Augmenté de 0.4 à 0.6 */
+    box-shadow: 0 8px 20px rgba(138, 43, 226, 0.4); /* Augmenté de 0.2 à 0.4 */
+}
+
+.hobby-item h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+    color: #d4a5ff; /* Couleur plus claire - changé de #b19cd9 */
+    font-weight: 600; /* Ajouté */
 }
 
 /* Photos pour hobbies */
@@ -1151,6 +1158,34 @@ h1{
     margin-bottom: 15px;
     flex-wrap: wrap;
     gap: 10px;
+}
+
+/* Titre du projet AVANT l'image */
+.project-title-top {
+    padding: 20px 30px 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.project-title-top h2 {
+    font-size: 32px; /* Plus grand */
+    margin: 0;
+    font-weight: 700; /* Gras */
+}
+
+.project-type-badge {
+    background: rgba(0, 255, 136, 0.15);
+    border: 1px solid rgba(0, 255, 136, 0.4);
+    padding: 6px 15px;
+    border-radius: 15px;
+    font-size: 13px;
+    color: #00ff88;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .project-header h2 {
@@ -1684,5 +1719,125 @@ main{
     
     .cv-subtitle {
         font-size: 12px;
+    }
+}
+
+/* Goal + Photo Grid */
+.about-goal-photo-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    margin-bottom: 30px;
+    align-items: center;
+}
+
+.about-goal-main {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 25px;
+    border: 1px solid rgba(0, 255, 136, 0.2);
+    text-align: center; /* AJOUT: Centrer le texte */
+}
+
+.about-goal-main h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #00ff88;
+}
+
+.about-goal-main p {
+    font-size: 15px;
+    line-height: 1.7;
+    opacity: 0.9;
+}
+
+.about-photo-center {
+    text-align: center;
+}
+
+.about-photo-center img {
+    max-width: 100%;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid rgba(0, 255, 136, 0.4);
+    box-shadow: 0 8px 32px rgba(0, 255, 136, 0.3);
+}
+
+/* Certifications Section */
+.about-certifications {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.about-certifications h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.certifications-intro {
+    text-align: center;
+    font-size: 14px;
+    opacity: 0.7;
+    margin-bottom: 25px;
+}
+
+.certifications-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.certification-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(5px);
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.certification-item:hover {
+    background: rgba(255, 255, 255, 0.06);
+    transform: translateX(5px);
+    border-color: rgba(0, 255, 136, 0.3);
+}
+
+.certification-icon {
+    font-size: 40px;
+    filter: drop-shadow(0 0 10px rgba(0, 255, 136, 0.3));
+}
+
+.certification-content h4 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #00ff88;
+}
+
+.certification-content p {
+    font-size: 14px;
+    opacity: 0.8;
+    line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 850px) {
+    .about-goal-photo-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-photo-center img {
+        width: 200px;
+        height: 200px;
     }
 }
