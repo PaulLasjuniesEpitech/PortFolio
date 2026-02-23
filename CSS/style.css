@@ -97,13 +97,8 @@ nav{
 
 /* Contact - Position fixe directe */
 .Contacts {
-    position: fixed;
-    top: calc(5vh + 60px + 2vh);
-    left: 5vw;
-    right: 5vw;
-    bottom: 5vh;
-    width: auto;
-    height: auto;
+    width: 100%;
+    height: 100%;
     background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(20px);
     border-radius: 20px;
@@ -1307,10 +1302,8 @@ h1{
 
 /* Contact - Hero Section */
 .contact-hero {
-    text-align: center;
-    margin-bottom: 15px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 10px;
+    padding-bottom: 10px;
 }
 
 .contact-hero h1 {
@@ -1329,13 +1322,7 @@ h1{
 
 /* Contact Introduction */
 .contact-intro {
-    background: rgba(0, 255, 136, 0.05);
-    backdrop-filter: blur(10px);
-    border-radius: 12px;
-    padding: 15px;
-    margin-bottom: 15px;
-    border: 1px solid rgba(0, 255, 136, 0.2);
-    text-align: center;
+    margin-bottom: 10px;
 }
 
 .contact-intro p {
@@ -1351,13 +1338,16 @@ h1{
     grid-template-columns: 1fr 1fr;
     gap: 20px;
     flex: 1;
+    min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 /* Contact Left - Cartes empilées */
-.contact-left {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+.contact-left,
+.contact-right {
+    min-width: 0;
+    overflow: hidden;
 }
 
 .contact-card {
@@ -1403,12 +1393,6 @@ h1{
     font-size: 11px;
     color: #00ff88;
     margin-top: 2px;
-}
-
-/* Contact Right - Formulaire */
-.contact-right {
-    display: flex;
-    flex-direction: column;
 }
 
 .contact-form-section {
@@ -1508,12 +1492,38 @@ h1{
     font-size: 16px;
 }
 
-/* Contact Footer */
 .contact-footer {
-    text-align: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 20px;
     padding: 12px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     margin-top: 15px;
+}
+
+.footer-text {
+    flex: 1;
+    text-align: center;
+}
+
+.footer-cv-link {
+    text-decoration: none;
+    color: #00ff88;
+    position: absolute;
+    left: 20%;
+    font-size: 13px;
+    padding: 8px 15px;
+    border: 1px solid rgba(0, 255, 136, 0.3);
+    border-radius: 8px;
+    background: rgba(0, 255, 136, 0.05);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.footer-cv-link:hover {
+    background: rgba(0, 255, 136, 0.15);
+    border-color: rgba(0, 255, 136, 0.5);
 }
 
 .transmission {
@@ -1841,3 +1851,4 @@ main{
         height: 200px;
     }
 }
+
