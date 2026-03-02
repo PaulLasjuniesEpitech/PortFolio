@@ -27,11 +27,11 @@ function hasSeenIntro() {
 
 function markIntroAsCompleted(mode) {
     setCookie('intro_completed', 'true', 1);
-    setCookie('portfolio_mode', mode, 24); // Sauvegarde le mode choisi pour 24h
+    setCookie('portfolio_mode', mode, 24);
 }
 
 function getPortfolioMode() {
-    return getCookie('portfolio_mode') || 'rh'; // Par défaut: mode RH
+    return getCookie('portfolio_mode') || 'rh';
 }
 
 window.resetIntro = function() {
@@ -42,9 +42,6 @@ window.resetIntro = function() {
 
 // ========== CONFIGURATION ==========
 const TYPING_SPEED = 50;
-
-// ========== TEXTE UNIQUE ==========
-const introText = "My name is\nPaul Lasjunies\nI'm a student at Epitech.\nAnd\nI'm glad to present you\nmy portfolio!";
 
 let isTyping = false;
 
@@ -86,6 +83,10 @@ function createModeSelection() {
     const typingText = document.getElementById('typingText');
     if (!typingText) return;
     
+    const introText = window.t ? t('intro_text') : "Je m'appelle\nPaul Lasjunies\nJe suis étudiant à Epitech.\nEt\nJe suis ravi de vous présenter\nmon portfolio !";
+    const rhBtnText = window.t ? t('intro_rh_btn') : "💼 Vue Rapide (Pour Recruteurs)";
+    const techBtnText = window.t ? t('intro_tech_btn') : "🚀 Commencer le Voyage (Expérience Immersive)";
+    
     typingText.innerHTML = `
         ${escapeHtml(introText)}
         <br><br>
@@ -102,7 +103,7 @@ function createModeSelection() {
                 transition: all 0.3s ease;
             " onmouseover="this.style.background='linear-gradient(135deg, rgba(0, 255, 136, 0.3), rgba(0, 255, 136, 0.2))'; this.style.transform='translateY(-2px)'" 
                onmouseout="this.style.background='linear-gradient(135deg, rgba(0, 255, 136, 0.2), rgba(0, 255, 136, 0.1))'; this.style.transform='translateY(0)'">
-                💼 Quick View (For Recruiters)
+                ${rhBtnText}
             </button>
             
             <button id="techModeBtn" style="
@@ -117,7 +118,7 @@ function createModeSelection() {
                 transition: all 0.3s ease;
             " onmouseover="this.style.background='linear-gradient(135deg, rgba(138, 43, 226, 0.3), rgba(138, 43, 226, 0.2))'; this.style.transform='translateY(-2px)'" 
                onmouseout="this.style.background='linear-gradient(135deg, rgba(138, 43, 226, 0.2), rgba(138, 43, 226, 0.1))'; this.style.transform='translateY(0)'">
-                🚀 Start Journey (Immersive Experience)
+                ${techBtnText}
             </button>
         </div>
     `;
@@ -134,13 +135,16 @@ function createModeSelection() {
     
     if (techBtn) {
         techBtn.addEventListener('click', () => {
-            // Afficher popup "Work in Progress"
             showWorkInProgressPopup();
         });
     }
 }
 
 function showWorkInProgressPopup() {
+    const popupTitle = window.t ? t('intro_popup_title') : "🚧 Travaux en Cours";
+    const popupText = window.t ? t('intro_popup_text') : "L'expérience immersive est actuellement en développement.<br>Veuillez utiliser le mode Vue Rapide pour le moment.";
+    const popupBtn = window.t ? t('intro_popup_btn') : "Compris !";
+    
     const popup = document.createElement('div');
     popup.style.cssText = `
         position: fixed;
@@ -159,10 +163,9 @@ function showWorkInProgressPopup() {
     `;
     
     popup.innerHTML = `
-        <h2 style="color: #b19cd9; margin-bottom: 20px; font-size: 32px;">🚧 Work in Progress</h2>
+        <h2 style="color: #b19cd9; margin-bottom: 20px; font-size: 32px;">${popupTitle}</h2>
         <p style="margin-bottom: 30px; line-height: 1.6;">
-            The immersive experience is currently under development.<br>
-            Please use the Quick View mode for now.
+            ${popupText}
         </p>
         <button id="closePopup" style="
             background: linear-gradient(135deg, rgba(0, 255, 136, 0.2), rgba(0, 255, 136, 0.1));
@@ -175,7 +178,7 @@ function showWorkInProgressPopup() {
             font-family: 'SUSE mono';
             transition: all 0.3s ease;
         ">
-            Got it!
+            ${popupBtn}
         </button>
     `;
     
@@ -203,19 +206,14 @@ function initPortfolio(mode) {
 }
 
 function setupRHMode() {
-    // Masquer le bouton Move
     const moveButton = document.getElementById('homemouvement');
     if (moveButton) moveButton.style.display = 'none';
     
-    // Afficher la navigation RH
     showRHNav();
 }
 
 function setupTechMode() {
-    // Afficher le bouton Move
     showMoveButton();
-    
-    // Masquer la navigation RH
     hideRHNav();
 }
 
@@ -223,7 +221,6 @@ function showRHNav() {
     const nav = document.querySelector('nav');
     if (!nav) return;
     
-    // Vérifier si la nav RH existe déjà
     if (document.getElementById('rh-nav')) return;
     
     const rhNav = document.createElement('div');
@@ -237,17 +234,18 @@ function showRHNav() {
     `;
     
     const buttons = [
-        { id: 'nav-home', text: 'Home', section: 'dHOME' },
-        { id: 'nav-about', text: 'About', section: 'dAbout_me' },
-        { id: 'nav-projects', text: 'Projects', section: 'dProjects' },
-        { id: 'nav-contact', text: 'Contact', section: 'dContacts' },
-        { id: 'nav-intro', text: 'Intro', action: 'intro' }
+        { id: 'nav-home', key: 'nav_home', section: 'dHOME' },
+        { id: 'nav-about', key: 'nav_about', section: 'dAbout_me' },
+        { id: 'nav-projects', key: 'nav_projects', section: 'dProjects' },
+        { id: 'nav-contact', key: 'nav_contact', section: 'dContacts' },
+        { id: 'nav-intro', key: 'nav_intro', action: 'intro' }
     ];
     
     buttons.forEach(btn => {
         const button = document.createElement('button');
         button.id = btn.id;
-        button.textContent = btn.text;
+        button.textContent = window.t ? t(btn.key) : btn.key;
+        button.setAttribute('data-i18n', btn.key);
         button.style.cssText = `
             background-color: transparent;
             color: #fff;
@@ -279,10 +277,10 @@ function showRHNav() {
         rhNav.appendChild(button);
     });
     
-    // Bouton Tech Mode (à droite)
     const techModeBtn = document.createElement('button');
     techModeBtn.id = 'switch-tech';
-    techModeBtn.textContent = '🚀 Tech Mode';
+    techModeBtn.textContent = window.t ? t('nav_tech_mode') : '🚀 Mode Tech';
+    techModeBtn.setAttribute('data-i18n', 'nav_tech_mode');
     techModeBtn.style.cssText = `
         position: absolute;
         right: 20px;
@@ -313,14 +311,12 @@ function hideRHNav() {
 }
 
 function navigateToSection(sectionId) {
-    // Cacher toutes les sections
     const sections = ['dHOME', 'dAbout_me', 'dProjects', 'dContacts'];
     sections.forEach(id => {
         const section = document.getElementById(id);
         if (section) section.style.display = 'none';
     });
     
-    // Afficher la section demandée
     const targetSection = document.getElementById(sectionId);
     if (targetSection) {
         targetSection.style.display = 'flex';
@@ -352,11 +348,11 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
     
-    // Désactiver les contrôles
     const controls = document.querySelector('.intro-controls');
     if (controls) controls.style.display = 'none';
     
-    // Lancer l'animation puis afficher les boutons
+    const introText = window.t ? t('intro_text') : "Je m'appelle\nPaul Lasjunies\nJe suis étudiant à Epitech.\nEt\nJe suis ravi de vous présenter\nmon portfolio !";
+    
     setTimeout(() => {
         typeText(introText, createModeSelection);
     }, 500);

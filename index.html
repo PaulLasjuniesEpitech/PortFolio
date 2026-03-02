@@ -1,19 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My portfolio</title>
+    <title>Paul Lasjunies - Portfolio</title>
     <link rel="stylesheet" href="CSS/style.css">
-
+    <link rel="stylesheet" href="CSS/projects.css">
+    <link rel="stylesheet" href="CSS/about.css">
 </head>
 
 <body id="body">
     <img class="back-image image-wrapper" src="DOCS/test.png" />
-    <!-- <video autoplay loop muted plays-inline class="back-video">
-        <source src="VIDEOS/1min_star_field.mp4" type="video/mp4">
-    </video> -->
 
     <header>
         <nav>
@@ -33,8 +31,8 @@
 
                 <!-- Message d'avertissement pour mobile -->
                 <div class="device-warning">
-                    <span class="warning-icon"></span>
-                    <p>For a better experience, please use a computer</p>
+                    <span class="warning-icon">💻</span>
+                    <p data-i18n="intro_warning">Pour une meilleure expérience, veuillez utiliser un ordinateur</p>
                 </div>
 
                 <!-- Contrôles d'animation -->
@@ -55,51 +53,50 @@
             <!-- HOME PAGE -->
             <div id="home" style="display:none;">
                 <!-- 1. Hero - Centré en haut -->
-
                 <div class="home-hero">
-                    <h1>Paul LASJUNIES</h1>
+                    <h1 data-i18n="home_title">Paul LASJUNIES</h1>
 
                     <!-- Bouton CV Download -->
                     <a href="DOCS/CV.pdf" download class="cv-download-btn">
                         <span class="cv-icon">📄</span>
                         <div class="cv-text">
-                            <span class="cv-title">Start your journey fully prepared</span>
-                            <span class="cv-subtitle">Download my CV</span>
+                            <span class="cv-title" data-i18n="home_cv_title">Commencez votre voyage bien préparé</span>
+                            <span class="cv-subtitle" data-i18n="home_cv_subtitle">Télécharger mon CV</span>
                         </div>
                     </a>
 
-                    <h3>Student Developer at Epitech</h3>
-                    <p>Welcome aboard.<br>Start your journey through my work.</p>
+                    <h3 data-i18n="home_subtitle">Étudiant Développeur à Epitech</h3>
+                    <p data-i18n="home_welcome">Bienvenue à bord.<br>Commencez votre voyage à travers mon travail.</p>
                 </div>
 
                 <!-- 2. Mini présentation - Gauche, 3/4 de largeur -->
                 <div class="home-about">
-                    <h2>About This Journey</h2>
-                    <p>
-                        I'm a student at Epitech, passionate about software development,
-                        new technologies and creative experiences.
-                        This portfolio is designed as a space journey to reflect
-                        my curiosity and my way of exploring new ideas.
+                    <h2 data-i18n="home_about_title">À Propos de ce Voyage</h2>
+                    <p data-i18n="home_about_text">
+                        Je suis étudiant à Epitech, passionné par le développement logiciel,
+                        les nouvelles technologies et les expériences créatives.
+                        Ce portfolio est conçu comme un voyage spatial pour refléter
+                        ma curiosité et ma façon d'explorer de nouvelles idées.
                     </p>
                 </div>
 
                 <!-- 4. Projets mis en avant - Droite, 3/4 de largeur -->
                 <div class="home-projects">
-                    <h2>Featured Missions</h2>
+                    <h2 data-i18n="home_projects_title">Missions En Vedette</h2>
                     <div class="featured-project">
-                        <h3>Drone Project</h3>
-                        <p>Built a custom drone using Arduino, 3D printing and electronics</p>
+                        <h3 data-i18n="home_drone">Projet Drone</h3>
+                        <p data-i18n="home_drone_desc">Construction d'un drone personnalisé avec Arduino, impression 3D et électronique</p>
                     </div>
                     <div class="featured-project">
-                        <h3>JobBoard Platform</h3>
-                        <p>A web platform connecting job seekers with opportunities</p>
+                        <h3 data-i18n="home_jobboard">Plateforme JobBoard</h3>
+                        <p data-i18n="home_jobboard_desc">Une plateforme web connectant les chercheurs d'emploi aux opportunités</p>
                     </div>
                 </div>
 
                 <!-- 5. Message immersif -->
                 <div class="home-status">
-                    <p>Current mission status: <span class="status-active">Active</span></p>
-                    <p>All systems operational</p>
+                    <p data-i18n="home_status">Statut de la mission actuelle : <span class="status-active">Actif</span></p>
+                    <p data-i18n="home_status_ops">Tous les systèmes opérationnels</p>
                 </div>
             </div>
         </div>
@@ -108,67 +105,63 @@
         <div class="About_me" id="dAbout_me" style="display:none;">
             <!-- Hero About -->
             <div class="about-hero">
-                <h1>About Me</h1>
-                <p class="subtitle">Student Developer • Space Enthusiast • Problem Solver</p>
+                <h1 data-i18n="about_title">À Propos de Moi</h1>
+                <p class="subtitle" data-i18n="about_subtitle">Étudiant Développeur • Passionné d'Espace • Résolveur de Problèmes</p>
             </div>
 
             <!-- Introduction -->
             <div class="about-intro">
-                <h2>Hi, I'm Paul 👋</h2>
-                <p>
-                    I'm a student developer at Epitech, passionate about software development,
-                    problem solving and building meaningful projects.
+                <h2 data-i18n="about_hi">Salut, je suis Paul 👋</h2>
+                <p data-i18n="about_intro_1">
+                    Je suis un étudiant développeur à Epitech, passionné par le développement logiciel,
+                    la résolution de problèmes et la construction de projets significatifs.
                 </p>
-                <p>
-                    During my studies, I've worked on both team and individual projects
-                    involving algorithms, system programming and web technologies.
+                <p data-i18n="about_intro_2">
+                    Pendant mes études, j'ai travaillé sur des projets en équipe et individuels
+                    impliquant des algorithmes, de la programmation système et des technologies web.
                 </p>
             </div>
 
             <!-- What I'm Looking For + Photo -->
             <div class="about-goal-photo-grid">
                 <div class="about-goal-main">
-                    <h3>🎯 What I'm Looking For</h3>
-                    <p>
-                        I'm currently seeking opportunities to continue learning,
-                        gain professional experience and contribute to exciting projects
-                        in software development. Whether it's an internship, apprenticeship,
-                        or collaborative project, I'm eager to apply my skills and grow
-                        as a developer.
+                    <h3 data-i18n="about_goal_title">🎯 Ce Que Je Recherche</h3>
+                    <p data-i18n="about_goal_text">
+                        Je recherche actuellement des opportunités pour continuer à apprendre,
+                        acquérir une expérience professionnelle et contribuer à des projets passionnants
+                        dans le développement logiciel. Que ce soit un stage, une alternance,
+                        ou un projet collaboratif, je suis désireux d'appliquer mes compétences et de grandir
+                        en tant que développeur.
                     </p>
                 </div>
-
-                <!-- <div class="about-photo-center">
-            <img src="DOCS/about_me/me.jpg" alt="Paul Lasjunies">
-        </div> -->
             </div>
 
             <!-- My Approach - Deux colonnes -->
             <div class="about-grid">
                 <div class="about-card">
-                    <h3>🧠 How I Work</h3>
-                    <p>
-                        I enjoy understanding how things work, writing clean code
-                        and constantly improving my skills. I like to understand problems
-                        deeply before coding, analyzing different approaches to find
-                        the most efficient solution.
+                    <h3 data-i18n="about_work_title">🧠 Comment Je Travaille</h3>
+                    <p data-i18n="about_work_text">
+                        J'aime comprendre comment les choses fonctionnent, écrire du code propre
+                        et améliorer constamment mes compétences. J'aime comprendre les problèmes
+                        en profondeur avant de coder, en analysant différentes approches pour trouver
+                        la solution la plus efficace.
                     </p>
                 </div>
 
                 <div class="about-card">
-                    <h3>🤝 Collaboration</h3>
-                    <p>
-                        I'm curious, autonomous, and I appreciate collaborating
-                        with others to find efficient solutions. Working in teams
-                        allows me to learn from different perspectives and improve
-                        my own approach to problem-solving.
+                    <h3 data-i18n="about_collab_title">🤝 Collaboration</h3>
+                    <p data-i18n="about_collab_text">
+                        Je suis curieux, autonome, et j'apprécie de collaborer
+                        avec les autres pour trouver des solutions efficaces. Travailler en équipe
+                        me permet d'apprendre de différentes perspectives et d'améliorer
+                        ma propre approche de la résolution de problèmes.
                     </p>
                 </div>
             </div>
 
             <!-- Skills Section avec logos -->
             <div class="about-skills">
-                <h2>Technical Skills</h2>
+                <h2 data-i18n="about_skills_title">Compétences Techniques</h2>
 
                 <div class="skills-grid">
                     <!-- Frontend -->
@@ -198,6 +191,18 @@
                         <img src="DOCS/languages/mysql.png" alt="MySQL">
                         <span>MySQL</span>
                     </div>
+                    <div class="skill-item">
+                        <img src="DOCS/languages/spring.png" alt="Spring Boot">
+                        <span>Spring Boot</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="DOCS/languages/rest.png" alt="REST">
+                        <span>REST</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="DOCS/languages/react.png" alt="React">
+                        <span>React</span>
+                    </div>
 
                     <!-- Tools -->
                     <div class="skill-item">
@@ -217,31 +222,31 @@
 
             <!-- Udemy Certifications -->
             <div class="about-certifications">
-                <h2>📜 Udemy Certifications</h2>
-                <p class="certifications-intro">Continuous learning through online courses</p>
+                <h2 data-i18n="about_cert_title">📜 Certifications Udemy</h2>
+                <p class="certifications-intro" data-i18n="about_cert_intro">Apprentissage continu à travers des cours en ligne</p>
 
                 <div class="certifications-list">
                     <div class="certification-item">
                         <div class="certification-icon">🎓</div>
                         <div class="certification-content">
-                            <h4>Complete Python Bootcamp</h4>
-                            <p>Advanced Python programming and data structures</p>
+                            <h4 data-i18n="about_cert_1_title">Bootcamp Python Complet</h4>
+                            <p data-i18n="about_cert_1_desc">Programmation Python avancée et structures de données</p>
                         </div>
                     </div>
 
                     <div class="certification-item">
                         <div class="certification-icon">🎓</div>
                         <div class="certification-content">
-                            <h4>Web Development Masterclass</h4>
-                            <p>Full-stack development with modern frameworks</p>
+                            <h4 data-i18n="about_cert_2_title">Masterclass Développement Web</h4>
+                            <p data-i18n="about_cert_2_desc">Développement full-stack avec frameworks modernes</p>
                         </div>
                     </div>
 
                     <div class="certification-item">
                         <div class="certification-icon">🎓</div>
                         <div class="certification-content">
-                            <h4>Docker & Kubernetes</h4>
-                            <p>Container orchestration and deployment</p>
+                            <h4 data-i18n="about_cert_3_title">Docker & Kubernetes</h4>
+                            <p data-i18n="about_cert_3_desc">Orchestration et déploiement de conteneurs</p>
                         </div>
                     </div>
                 </div>
@@ -249,62 +254,51 @@
 
             <!-- Hobbies Section -->
             <div class="about-hobbies">
-                <h2>Beyond Code</h2>
-                <p class="hobbies-intro">When I'm not coding, I enjoy activities that help me stay focused, creative and
-                    curious.</p>
+                <h2 data-i18n="about_hobbies_title">Au-Delà du Code</h2>
+                <p class="hobbies-intro" data-i18n="about_hobbies_intro">Quand je ne code pas, j'aime les activités qui m'aident à rester concentré, créatif et curieux.</p>
 
                 <div class="hobbies-grid">
                     <div class="hobby-item hobby-with-photo">
                         <div class="hobby-photo">
                             <img src="DOCS/about_me/me.jpg" alt="Cycling">
                         </div>
-                        <h3>Cycling</h3>
-                        <p>Cycling helps me clear my mind and maintain focus. The discipline and endurance required
-                            mirror the persistence needed in debugging and problem-solving.</p>
+                        <h3 data-i18n="about_hobby_1">Cyclisme</h3>
+                        <p data-i18n="about_hobby_1_desc">Le cyclisme m'aide à me vider l'esprit et à maintenir ma concentration. La discipline et l'endurance requises reflètent la persévérance nécessaire pour déboguer et résoudre les problèmes.</p>
                     </div>
 
                     <div class="hobby-item hobby-with-photo">
                         <div class="hobby-photo">
                             <img src="DOCS/about_me/3d_printing.png" alt="DIY Project">
                         </div>
-                        <h3>DIY Projects</h3>
-                        <p>Building things with my hands, like my drone project, allows me to understand hardware and
-                            combine creativity with technical skills.</p>
+                        <h3 data-i18n="about_hobby_2">Projets DIY</h3>
+                        <p data-i18n="about_hobby_2_desc">Construire des choses avec mes mains, comme mon projet de drone, me permet de comprendre le matériel et de combiner créativité et compétences techniques.</p>
                     </div>
 
                     <div class="hobby-item hobby-with-photo">
                         <div class="hobby-photo">
                             <img src="DOCS/about_me/video_game.jpg" alt="Video Games">
                         </div>
-                        <h3>Video Games</h3>
-                        <p>Gaming sharpens my strategic thinking and quick decision-making. Many games involve complex
-                            systems and puzzles that enhance my analytical skills.</p>
+                        <h3 data-i18n="about_hobby_3">Jeux Vidéo</h3>
+                        <p data-i18n="about_hobby_3_desc">Les jeux affûtent ma réflexion stratégique et ma prise de décision rapide. De nombreux jeux impliquent des systèmes complexes et des énigmes qui améliorent mes compétences analytiques.</p>
                     </div>
 
                     <div class="hobby-item hobby-with-photo">
                         <div class="hobby-photo">
                             <img src="DOCS/about_me/Star_citizen.png" alt="Space & Sci-Fi">
                         </div>
-                        <h3>Space & Sci-Fi</h3>
-                        <p>My passion for space exploration and science fiction fuels my curiosity about technology and
-                            innovation. It inspires me to think beyond current limitations.</p>
+                        <h3 data-i18n="about_hobby_4">Espace & Science-Fiction</h3>
+                        <p data-i18n="about_hobby_4_desc">Ma passion pour l'exploration spatiale et la science-fiction alimente ma curiosité pour la technologie et l'innovation. Cela m'inspire à penser au-delà des limitations actuelles.</p>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <!-- Optional: Photo -->
-        <!-- <div class="about-photo">
-                <img src="../DOCS/e.jpg" alt="Paul Lasjunies">
-            </div> -->
         </div>
 
         <!-- PROJECTS SECTION -->
         <div class="Projects" id="dProjects" style="display:none;">
             <!-- Hero Projects -->
             <div class="projects-hero">
-                <h1>Mission Archive</h1>
-                <p class="subtitle">Explore the modules I've built during my journey</p>
+                <h1 data-i18n="projects_title">Archive des Missions</h1>
+                <p class="subtitle" data-i18n="projects_subtitle">Explorez les modules que j'ai construits pendant mon voyage</p>
             </div>
 
             <!-- Projects Grid -->
@@ -313,26 +307,26 @@
                 <!-- Project 1: Factor -->
                 <div class="project-card">
                     <div class="project-title-top">
-                        <h2>🏭 Factor</h2>
-                        <span class="project-type-badge">Personal Project</span>
+                        <h2 data-i18n="project_factor_title">🏭 Factor</h2>
+                        <span class="project-type-badge" data-i18n="projects_badge_personal">Projet Personnel</span>
                     </div>
 
                     <div class="project-image">
                         <img src="DOCS/projects/factor.png" alt="Factor Project">
                         <div class="project-overlay">
-                            <span class="project-status">🚧 In Progress</span>
+                            <span class="project-status" data-i18n="projects_status_progress">🚧 En Cours</span>
                         </div>
                     </div>
 
                     <div class="project-content">
                         <div class="project-header">
-                            <span class="project-badge">Procedural Game Prototype</span>
+                            <span class="project-badge" data-i18n="project_factor_badge">Prototype de Jeu Procédural</span>
                         </div>
 
-                        <p class="project-description">
-                            Factor is a personal learning project developed with Godot 4.
-                            Inspired by factory-building games, it focuses on procedural map
-                            generation and object-oriented architecture.
+                        <p class="project-description" data-i18n="project_factor_desc">
+                            Factor est un projet d'apprentissage personnel développé avec Godot 4.
+                            Inspiré des jeux de construction d'usines, il se concentre sur la génération procédurale de cartes
+                            et l'architecture orientée objet.
                         </p>
 
                         <div class="project-tech">
@@ -343,64 +337,62 @@
                         </div>
 
                         <div class="project-learning">
-                            <h4>🎯 Project Goals</h4>
-                            <p>
-                                Learn procedural map generation, practice object-oriented architecture,
-                                and understand game engine workflows using Godot 4.
+                            <h4 data-i18n="project_factor_goals">🎯 Objectifs du Projet</h4>
+                            <p data-i18n="project_factor_goals_text">
+                                Apprendre la génération procédurale de cartes, pratiquer l'architecture orientée objet,
+                                et comprendre les flux de travail des moteurs de jeu avec Godot 4.
                             </p>
                         </div>
 
                         <div class="project-learning">
-                            <h4>💼 My Work</h4>
-                            <p>
-                                Designed a procedural tile-based map system, implemented object-oriented
-                                systems for buildings and resources, and structured the project to remain
-                                modular and extensible.
+                            <h4 data-i18n="project_factor_work">💼 Mon Travail</h4>
+                            <p data-i18n="project_factor_work_text">
+                                Conception d'un système de carte basé sur des tuiles procédurales, implémentation de systèmes orientés objet
+                                pour les bâtiments et ressources, et structuration du projet pour rester modulaire et extensible.
                             </p>
                         </div>
 
                         <div class="project-learning">
-                            <h4>📚 What I Learned</h4>
-                            <p>
-                                How to structure a game project using OOP principles, balancing flexibility
-                                and performance in procedural systems, and working efficiently with Godot 4
-                                and GDScript.
+                            <h4 data-i18n="project_factor_learned">📚 Ce Que J'ai Appris</h4>
+                            <p data-i18n="project_factor_learned_text">
+                                Comment structurer un projet de jeu en utilisant les principes OOP, équilibrer flexibilité
+                                et performance dans les systèmes procéduraux, et travailler efficacement avec Godot 4
+                                et GDScript.
                             </p>
                         </div>
 
                         <div class="project-links">
                             <a href="https://github.com/yourusername/factor" target="_blank" class="project-link">
-                                <span>📁 View Code</span>
+                                <span data-i18n="project_view_code">📁 Voir le Code</span>
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 2: Drone (NOUVEAU - à placer en premier) -->
+                <!-- Project 2: Drone -->
                 <div class="project-card">
                     <div class="project-title-top">
-                        <h2>🚁 Autonomous Drone</h2>
-                        <span class="project-type-badge">Personal Project</span>
+                        <h2 data-i18n="project_drone_title">🚁 Drone Autonome</h2>
+                        <span class="project-type-badge" data-i18n="projects_badge_personal">Projet Personnel</span>
                     </div>
 
                     <div class="project-image">
                         <img src="DOCS/projects/drone.jpg" alt="Drone Project">
                         <div class="project-overlay">
-                            <span class="project-status">🚧 In Progress</span>
+                            <span class="project-status" data-i18n="projects_status_progress">🚧 En Cours</span>
                         </div>
                     </div>
 
                     <div class="project-content">
                         <div class="project-header">
-                            <span class="project-badge">Hardware & Software</span>
+                            <span class="project-badge" data-i18n="project_drone_badge">Matériel & Logiciel</span>
                         </div>
 
-                        <p class="project-description">
-                            Built a fully functional drone from scratch with a friend.
-                            The project combines 3D-printed parts designed in Fusion 360, Arduino programming,
-                            and custom electronic circuits for flight control and stabilization.
-                            Leveraging my EEA (Electronics, Electrical Engineering and Automation) background from Paul
-                            Sabatier University.
+                        <p class="project-description" data-i18n="project_drone_desc">
+                            Construction d'un drone entièrement fonctionnel à partir de zéro avec un ami.
+                            Le projet combine des pièces imprimées en 3D conçues avec Fusion 360, de la programmation Arduino,
+                            et des circuits électroniques personnalisés pour le contrôle de vol et la stabilisation.
+                            En tirant parti de ma formation EEA (Électronique, Électrotechnique et Automatique) de l'Université Paul Sabatier.
                         </p>
 
                         <div class="project-tech">
@@ -413,79 +405,74 @@
                         </div>
 
                         <div class="project-learning">
-                            <h4>🎯 Project Goals</h4>
-                            <p>
-                                Design and build a custom autonomous drone combining software programming,
-                                3D modeling, electronics knowledge, and mechanical engineering.
-                                Integrate flight control systems and sensor data processing for stable flight.
+                            <h4 data-i18n="project_drone_goals">🎯 Objectifs du Projet</h4>
+                            <p data-i18n="project_drone_goals_text">
+                                Concevoir et construire un drone autonome personnalisé combinant programmation logicielle,
+                                modélisation 3D, connaissances en électronique et ingénierie mécanique.
+                                Intégrer des systèmes de contrôle de vol et traitement de données de capteurs pour un vol stable.
                             </p>
                         </div>
 
                         <div class="project-learning">
-                            <h4>💼 My Work</h4>
-                            <p>
-                                Designed custom drone frame and parts in Fusion 360, 3D printed components using
-                                Creality printer,
-                                programmed flight controller in C++ on Arduino platform, wired and integrated electronic
-                                circuits
-                                (ESCs, motors, sensors), and applied EEA principles learned at Paul Sabatier University
-                                for power management and signal processing.
+                            <h4 data-i18n="project_drone_work">💼 Mon Travail</h4>
+                            <p data-i18n="project_drone_work_text">
+                                Conception du châssis et des pièces personnalisées du drone dans Fusion 360, impression 3D des composants avec une imprimante Creality,
+                                programmation du contrôleur de vol en C++ sur plateforme Arduino, câblage et intégration de circuits électroniques
+                                (ESCs, moteurs, capteurs), et application des principes EEA appris à l'Université Paul Sabatier
+                                pour la gestion de l'alimentation et le traitement du signal.
                             </p>
                         </div>
 
                         <div class="project-learning">
-                            <h4>📚 What I Learned</h4>
-                            <p>
-                                How to integrate hardware and software systems, manage sensor data in real-time,
-                                design mechanical parts for 3D printing, understand electronic circuit design and power
-                                distribution,
-                                debug physical systems, and apply theoretical EEA knowledge to practical applications.
-                                This project strengthened my multidisciplinary problem-solving skills.
+                            <h4 data-i18n="project_drone_learned">📚 Ce Que J'ai Appris</h4>
+                            <p data-i18n="project_drone_learned_text">
+                                Comment intégrer des systèmes matériels et logiciels, gérer les données de capteurs en temps réel,
+                                concevoir des pièces mécaniques pour l'impression 3D, comprendre la conception de circuits électroniques et la distribution d'énergie,
+                                déboguer des systèmes physiques, et appliquer les connaissances théoriques EEA à des applications pratiques.
+                                Ce projet a renforcé mes compétences de résolution de problèmes multidisciplinaires.
                             </p>
                         </div>
 
                         <div class="project-learning">
-                            <h4>🎓 Academic Background</h4>
-                            <p>
-                                This project builds on my Electronics, Electrical Engineering and Automation (EEA)
-                                education
-                                from Paul Sabatier University, where I learned circuit design, signal processing,
-                                control systems, and embedded programming fundamentals.
+                            <h4 data-i18n="project_drone_academic">🎓 Formation Académique</h4>
+                            <p data-i18n="project_drone_academic_text">
+                                Ce projet s'appuie sur ma formation en Électronique, Électrotechnique et Automatique (EEA)
+                                de l'Université Paul Sabatier, où j'ai appris la conception de circuits, le traitement du signal,
+                                les systèmes de contrôle et les fondamentaux de la programmation embarquée.
                             </p>
                         </div>
 
                         <div class="project-links">
                             <a href="https://github.com/yourusername/drone" target="_blank" class="project-link">
-                                <span>📁 View Code</span>
+                                <span data-i18n="project_view_code">📁 Voir le Code</span>
                             </a>
                         </div>
                     </div>
                 </div>
 
-
                 <!-- Project 3: JobBoard -->
                 <div class="project-card">
                     <div class="project-title-top">
-                        <h2>💼 JobBoard Platform</h2>
-                        <span class="project-type-badge">Epitech Project</span>
+                        <h2 data-i18n="project_jobboard_title">💼 Plateforme JobBoard</h2>
+                        <span class="project-type-badge" data-i18n="projects_badge_epitech">Projet Epitech</span>
                     </div>
 
                     <div class="project-image">
                         <img src="DOCS/projects/jobboard.png" alt="JobBoard Project">
                         <div class="project-overlay">
-                            <span class="project-status">⚡ Completed</span>
+                            <span class="project-status" data-i18n="projects_status_completed">⚡ Terminé</span>
                         </div>
                     </div>
 
                     <div class="project-content">
                         <div class="project-header">
-                            <span class="project-badge">Full Stack Web</span>
+                            <span class="project-badge" data-i18n="project_jobboard_badge">Web Full Stack</span>
                         </div>
 
-                        <p class="project-description">
-                            A web platform connecting job seekers with opportunities.
-                            Features include job listings, search filters, user authentication,
-                            and an admin dashboard for managing postings. Built as an Epitech project.
+                        <p class="project-description" data-i18n="project_jobboard_desc">
+                            Une plateforme web connectant les chercheurs d'emploi aux opportunités.
+                            Les fonctionnalités incluent des listes d'emplois, des filtres de recherche, l'authentification des utilisateurs,
+                            et un tableau de bord administrateur pour gérer les publications. Construit en tant que projet Epitech.
                         </p>
 
                         <div class="project-tech">
@@ -497,18 +484,18 @@
                         </div>
 
                         <div class="project-learning">
-                            <h4>🎯 Key Learnings</h4>
-                            <p>
-                                This project enhanced my full-stack development skills,
-                                from designing a database schema to building RESTful APIs
-                                and creating a responsive frontend. I learned to work in a team,
-                                manage Git workflows, and deploy a complete web application.
+                            <h4 data-i18n="project_jobboard_learned">🎯 Principaux Apprentissages</h4>
+                            <p data-i18n="project_jobboard_learned_text">
+                                Ce projet a amélioré mes compétences en développement full-stack,
+                                de la conception d'un schéma de base de données à la construction d'API RESTful
+                                et la création d'un frontend responsive. J'ai appris à travailler en équipe,
+                                gérer les flux de travail Git et déployer une application web complète.
                             </p>
                         </div>
 
                         <div class="project-links">
                             <a href="https://github.com/yourusername/jobboard" target="_blank" class="project-link">
-                                <span>📁 View Code</span>
+                                <span data-i18n="project_view_code">📁 Voir le Code</span>
                             </a>
                         </div>
                     </div>
@@ -517,26 +504,26 @@
                 <!-- Project 4: 2D Game -->
                 <div class="project-card">
                     <div class="project-title-top">
-                        <h2>🎮 Java 2D Game</h2>
-                        <span class="project-type-badge">Epitech Project</span>
+                        <h2 data-i18n="project_2dgame_title">🎮 Jeu Java 2D</h2>
+                        <span class="project-type-badge" data-i18n="projects_badge_epitech">Projet Epitech</span>
                     </div>
 
                     <div class="project-image">
                         <img src="DOCS/projects/2d_game.png" alt="2D Game Project">
                         <div class="project-overlay">
-                            <span class="project-status">⚡ Completed</span>
+                            <span class="project-status" data-i18n="projects_status_completed">⚡ Terminé</span>
                         </div>
                     </div>
 
                     <div class="project-content">
                         <div class="project-header">
-                            <span class="project-badge">Academic Team Project</span>
+                            <span class="project-badge" data-i18n="project_2dgame_badge">Projet Académique en Équipe</span>
                         </div>
 
-                        <p class="project-description">
-                            A 2D game developed in Java as part of a school project.
-                            The goal was to design a functional game while applying
-                            object-oriented programming principles and game logic.
+                        <p class="project-description" data-i18n="project_2dgame_desc">
+                            Un jeu 2D développé en Java dans le cadre d'un projet scolaire.
+                            L'objectif était de concevoir un jeu fonctionnel tout en appliquant
+                            les principes de programmation orientée objet et la logique de jeu.
                         </p>
 
                         <div class="project-tech">
@@ -547,24 +534,24 @@
                         </div>
 
                         <div class="project-learning">
-                            <h4>💼 My Role</h4>
-                            <p>
-                                Participated in game logic implementation, worked on object-oriented structure,
-                                and collaborated with a team to design gameplay mechanics.
+                            <h4 data-i18n="project_2dgame_role">💼 Mon Rôle</h4>
+                            <p data-i18n="project_2dgame_role_text">
+                                Participation à l'implémentation de la logique de jeu, travail sur la structure orientée objet,
+                                et collaboration avec une équipe pour concevoir les mécaniques de gameplay.
                             </p>
                         </div>
 
                         <div class="project-learning">
-                            <h4>📚 What I Learned</h4>
-                            <p>
-                                Structuring a Java project using OOP principles, managing game states
-                                and player interactions, and working efficiently in a team environment.
+                            <h4 data-i18n="project_2dgame_learned">📚 Ce Que J'ai Appris</h4>
+                            <p data-i18n="project_2dgame_learned_text">
+                                Structurer un projet Java en utilisant les principes OOP, gérer les états du jeu
+                                et les interactions des joueurs, et travailler efficacement dans un environnement d'équipe.
                             </p>
                         </div>
 
                         <div class="project-links">
                             <a href="https://github.com/yourusername/2dgame" target="_blank" class="project-link">
-                                <span>📁 View Code</span>
+                                <span data-i18n="project_view_code">📁 Voir le Code</span>
                             </a>
                         </div>
                     </div>
@@ -573,26 +560,26 @@
                 <!-- Project 5: RTC Platform -->
                 <div class="project-card">
                     <div class="project-title-top">
-                        <h2>💬 Real-Time Communication Platform</h2>
-                        <span class="project-type-badge">Epitech Project</span>
+                        <h2 data-i18n="project_rtc_title">💬 Plateforme de Communication en Temps Réel</h2>
+                        <span class="project-type-badge" data-i18n="projects_badge_epitech">Projet Epitech</span>
                     </div>
 
                     <div class="project-image">
                         <img src="DOCS/projects/RTC.png" alt="RTC Platform Project">
                         <div class="project-overlay">
-                            <span class="project-status">🚧 In Progress</span>
+                            <span class="project-status" data-i18n="projects_status_progress">🚧 En Cours</span>
                         </div>
                     </div>
 
                     <div class="project-content">
                         <div class="project-header">
-                            <span class="project-badge">Full Stack & Real-Time</span>
+                            <span class="project-badge" data-i18n="project_rtc_badge">Full Stack & Temps Réel</span>
                         </div>
 
-                        <p class="project-description">
-                            A real-time communication platform currently in development.
-                            The project combines modern frontend technologies with a robust backend
-                            architecture supporting WebSocket connections for instant messaging.
+                        <p class="project-description" data-i18n="project_rtc_desc">
+                            Une plateforme de communication en temps réel actuellement en développement.
+                            Le projet combine des technologies frontend modernes avec une architecture backend robuste
+                            supportant des connexions WebSocket pour la messagerie instantanée.
                         </p>
 
                         <div class="project-tech">
@@ -605,35 +592,35 @@
                         </div>
 
                         <div class="project-learning">
-                            <h4>🎯 Project Goals</h4>
-                            <p>
-                                Build a scalable real-time communication system, integrate WebSocket
-                                for instant messaging, and manage a hybrid database architecture using
-                                both SQL and NoSQL solutions.
+                            <h4 data-i18n="project_rtc_goals">🎯 Objectifs du Projet</h4>
+                            <p data-i18n="project_rtc_goals_text">
+                                Construire un système de communication en temps réel évolutif, intégrer WebSocket
+                                pour la messagerie instantanée, et gérer une architecture de base de données hybride utilisant
+                                à la fois des solutions SQL et NoSQL.
                             </p>
                         </div>
 
                         <div class="project-learning">
-                            <h4>💼 My Work</h4>
-                            <p>
-                                Developing the React frontend, implementing REST API endpoints,
-                                setting up Spring Boot WebSocket server for real-time features,
-                                and designing the database schema across PostgreSQL and MongoDB.
+                            <h4 data-i18n="project_rtc_work">💼 Mon Travail</h4>
+                            <p data-i18n="project_rtc_work_text">
+                                Développement du frontend React, implémentation des endpoints API REST,
+                                mise en place du serveur WebSocket Spring Boot pour les fonctionnalités en temps réel,
+                                et conception du schéma de base de données sur PostgreSQL et MongoDB.
                             </p>
                         </div>
 
                         <div class="project-learning">
-                            <h4>📚 What I'm Learning</h4>
-                            <p>
-                                Managing real-time bidirectional communication with WebSockets,
-                                architecting a microservices-based backend, and working with both
-                                relational and document-based databases in the same application.
+                            <h4 data-i18n="project_rtc_learning">📚 Ce Que J'Apprends</h4>
+                            <p data-i18n="project_rtc_learning_text">
+                                Gestion de la communication bidirectionnelle en temps réel avec WebSockets,
+                                architecture d'un backend basé sur les microservices, et travail avec des bases de données
+                                relationnelles et orientées documents dans la même application.
                             </p>
                         </div>
 
                         <div class="project-links">
                             <a href="https://github.com/yourusername/rtc-platform" target="_blank" class="project-link">
-                                <span>📁 View Code</span>
+                                <span data-i18n="project_view_code">📁 Voir le Code</span>
                             </a>
                         </div>
                     </div>
@@ -642,26 +629,26 @@
                 <!-- Project 6: Portfolio -->
                 <div class="project-card">
                     <div class="project-title-top">
-                        <h2>🌌 Space Portfolio</h2>
-                        <span class="project-type-badge">Personal Project</span>
+                        <h2 data-i18n="project_portfolio_title">🌌 Portfolio Spatial</h2>
+                        <span class="project-type-badge" data-i18n="projects_badge_personal">Projet Personnel</span>
                     </div>
 
                     <div class="project-image">
                         <img src="DOCS/projects/portfolio.jpg" alt="Portfolio Project">
                         <div class="project-overlay">
-                            <span class="project-status">🚀 Active</span>
+                            <span class="project-status" data-i18n="projects_status_active">🚀 Actif</span>
                         </div>
                     </div>
 
                     <div class="project-content">
                         <div class="project-header">
-                            <span class="project-badge">Creative Web</span>
+                            <span class="project-badge" data-i18n="project_portfolio_badge">Web Créatif</span>
                         </div>
 
-                        <p class="project-description">
-                            An interactive portfolio website designed as a space journey.
-                            Features include smooth animations, typing effects, glassmorphism UI,
-                            and a responsive design that adapts to all devices.
+                        <p class="project-description" data-i18n="project_portfolio_desc">
+                            Un site portfolio interactif conçu comme un voyage spatial.
+                            Les fonctionnalités incluent des animations fluides, des effets de frappe, une UI glassmorphism,
+                            et un design responsive qui s'adapte à tous les appareils.
                         </p>
 
                         <div class="project-tech">
@@ -672,18 +659,18 @@
                         </div>
 
                         <div class="project-learning">
-                            <h4>🎯 Key Learnings</h4>
-                            <p>
-                                Creating this portfolio taught me advanced CSS techniques,
-                                JavaScript animations, and the importance of user experience.
-                                I learned to create a cohesive visual theme and tell a story
-                                through design.
+                            <h4 data-i18n="project_portfolio_learned">🎯 Principaux Apprentissages</h4>
+                            <p data-i18n="project_portfolio_learned_text">
+                                La création de ce portfolio m'a appris des techniques CSS avancées,
+                                des animations JavaScript, et l'importance de l'expérience utilisateur.
+                                J'ai appris à créer un thème visuel cohérent et à raconter une histoire
+                                à travers le design.
                             </p>
                         </div>
 
                         <div class="project-links">
                             <a href="https://github.com/yourusername/portfolio" target="_blank" class="project-link">
-                                <span>📁 View Code</span>
+                                <span data-i18n="project_view_code">📁 Voir le Code</span>
                             </a>
                         </div>
                     </div>
@@ -693,8 +680,8 @@
 
             <!-- More Projects Coming -->
             <div class="projects-footer">
-                <h3>🛸 More Missions Coming Soon</h3>
-                <p>Currently working on new projects. Stay tuned for updates!</p>
+                <h3 data-i18n="projects_more">🛸 Plus de Missions Bientôt</h3>
+                <p data-i18n="projects_more_desc">Travail en cours sur de nouveaux projets. Restez à l'écoute pour les mises à jour !</p>
             </div>
         </div>
 
@@ -702,15 +689,15 @@
         <div class="Contacts" id="dContacts" style="display:none;">
             <!-- Hero Contact -->
             <div class="contact-hero">
-                <h1>Mission Complete</h1>
-                <p class="subtitle">🛸 You've reached the end of the journey</p>
+                <h1 data-i18n="contact_title">Mission Accomplie</h1>
+                <p class="subtitle" data-i18n="contact_subtitle">🛸 Vous avez atteint la fin du voyage</p>
             </div>
 
             <!-- Message de conclusion -->
             <div class="contact-intro">
-                <p>
-                    Thank you for taking the time to explore my portfolio.
-                    If you'd like to get in touch, the communication module is now available below.
+                <p data-i18n="contact_intro">
+                    Merci d'avoir pris le temps d'explorer mon portfolio.
+                    Si vous souhaitez me contacter, le module de communication est maintenant disponible ci-dessous.
                 </p>
             </div>
 
@@ -719,55 +706,57 @@
                 <!-- Left: Contact Cards -->
                 <div class="contact-left">
                     <a href="mailto:paul.lasjunies@gmail.com?subject=From Portfolio" class="contact-card">
-                        <div class="contact-icon">📧</div>
-                        <h3>Email</h3>
-                        <p class="contact-detail">paul.lasjunies@gmail.com</p>
-                        <span class="contact-action">Send a message →</span>
+                        <div class="contact-icon">
+                            <img src="DOCS/Contacts/email.png" alt="Email" class="contact-logo">
+                        </div>
+                        <h3 data-i18n="contact_email">Email</h3>
+                        <p class="contact-detail" data-i18n="contact_email_detail">paul.lasjunies@gmail.com</p>
+                        <span class="contact-action" data-i18n="contact_email_action">Envoyer un message →</span>
                     </a>
 
-                    <a href="https://www.linkedin.com/in/paul-lasjunies-94a04635a/" target="_blank"
-                        class="contact-card">
-                        <div class="contact-icon">💼</div>
-                        <h3>LinkedIn</h3>
-                        <p class="contact-detail">Connect with me</p>
-                        <span class="contact-action">View profile →</span>
+                    <a href="https://www.linkedin.com/in/paul-lasjunies-94a04635a/" target="_blank" class="contact-card">
+                        <div class="contact-icon">
+                            <img src="DOCS/Contacts/linkedin.png" alt="LinkedIn" class="contact-logo">
+                        </div>
+                        <h3 data-i18n="contact_linkedin">LinkedIn</h3>
+                        <p class="contact-detail" data-i18n="contact_linkedin_detail">Connectez-vous avec moi</p>
+                        <span class="contact-action" data-i18n="contact_linkedin_action">Voir le profil →</span>
                     </a>
 
                     <a href="https://github.com/PaulLasjuniesEpitech" target="_blank" class="contact-card">
-                        <div class="contact-icon">💻</div>
-                        <h3>GitHub</h3>
-                        <p class="contact-detail">Check out my code</p>
-                        <span class="contact-action">View repositories →</span>
+                        <div class="contact-icon">
+                            <img src="DOCS/Contacts/github.png" alt="GitHub" class="contact-logo">
+                        </div>
+                        <h3 data-i18n="contact_github">GitHub</h3>
+                        <p class="contact-detail" data-i18n="contact_github_detail">Consultez mon code</p>
+                        <span class="contact-action" data-i18n="contact_github_action">Voir les dépôts →</span>
                     </a>
-
-
                 </div>
 
                 <!-- Right: Contact Form -->
                 <div class="contact-right">
                     <div class="contact-form-section">
-                        <h3>📨 Or Send a Direct Message</h3>
-                        <p class="form-subtitle">I'll get back to you as soon as possible</p>
+                        <h3 data-i18n="contact_form_title">📨 Ou Envoyez un Message Direct</h3>
+                        <p class="form-subtitle" data-i18n="contact_form_subtitle">Je vous répondrai dès que possible</p>
 
                         <form class="contact-form" action="https://formspree.io/f/mgozkwyb" method="POST">
                             <div class="form-group">
-                                <label for="name">Name</label>
-                                <input type="text" id="name" name="name" placeholder="Your name" required>
+                                <label for="name" data-i18n="contact_name">Nom</label>
+                                <input type="text" id="name" name="name" data-i18n="contact_name_placeholder" placeholder="Votre nom" required>
                             </div>
 
                             <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" placeholder="your.email@example.com"
-                                    required>
+                                <label for="email" data-i18n="contact_email_label">Email</label>
+                                <input type="email" id="email" name="email" data-i18n="contact_email_placeholder" placeholder="votre.email@exemple.com" required>
                             </div>
 
                             <div class="form-group" style="flex: 1; display: flex; flex-direction: column;">
-                                <label for="message">Message</label>
-                                <textarea id="message" name="message" placeholder="Your message..." required></textarea>
+                                <label for="message" data-i18n="contact_message">Message</label>
+                                <textarea id="message" name="message" data-i18n="contact_message_placeholder" placeholder="Votre message..." required></textarea>
                             </div>
 
                             <button type="submit" class="form-submit">
-                                <span>Send Message</span>
+                                <span data-i18n="contact_send">Envoyer le Message</span>
                                 <span class="submit-icon">🚀</span>
                             </button>
                         </form>
@@ -777,11 +766,11 @@
 
             <div class="contact-footer">
                 <a href="DOCS/CV.pdf" download class="footer-cv-link">
-                    <span>📄</span> Download CV
+                    <span data-i18n="contact_cv">📄 Télécharger CV</span>
                 </a>
                 <div class="footer-text">
-                    <p class="transmission">End of transmission.</p>
-                    <p class="thank-you">Thank you for your visit. See you soon.</p>
+                    <p class="transmission" data-i18n="contact_transmission">Fin de transmission.</p>
+                    <p class="thank-you" data-i18n="contact_thanks">Merci de votre visite. À bientôt.</p>
                     <div class="footer-decoration">
                         <span>⋆</span>
                         <span>✦</span>
@@ -793,25 +782,24 @@
 
     </main>
 
-
-
     <div class="Move">
         <div id="MovePage" class="MOVEPAGE">
             <div class="item" id="About" style="display:none;">
-                <h1>About me</h1>
+                <h1 data-i18n="nav_about">À propos</h1>
             </div>
             <div class="item" id="Projects" style="display:none;">
-                <h1>Projects</h1>
+                <h1 data-i18n="nav_projects">Projets</h1>
             </div>
             <div class="item" id="textHome" style="display:none;">
-                <h1>Home</h1>
+                <h1 data-i18n="nav_home">Accueil</h1>
             </div>
             <div class="item" id="Contacts" style="display:none;">
-                <h1>Contacts</h1>
+                <h1 data-i18n="nav_contact">Contact</h1>
             </div>
         </div>
     </div>
 
+    <script src="JS/lang.js"></script>
     <script src="JS/move.js"></script>
     <script src="JS/intro.js"></script>
 </body>

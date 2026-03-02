@@ -1482,6 +1482,19 @@ h1{
     margin-top: 10px;
 }
 
+.contact-logo {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 8px rgba(0, 255, 136, 0.3));
+}
+
+.nav-btn-active {
+    background: rgba(0, 255, 136, 0.2) !important;
+    border-color: rgba(0, 255, 136, 0.5) !important;
+    color: #00ff88 !important;
+}
+
 .form-submit:hover {
     background: linear-gradient(135deg, rgba(0, 255, 136, 0.3), rgba(0, 255, 136, 0.2));
     transform: translateY(-2px);
