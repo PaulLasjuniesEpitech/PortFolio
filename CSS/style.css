@@ -6,8 +6,14 @@
     box-sizing: border-box;
 }
 
+
+
 body::-webkit-scrollbar{
     display: none;
+}
+
+body > *:not(.back-image):not(.image-wrapper) {
+    zoom: 0.9;
 }
 
 body{
@@ -18,6 +24,7 @@ body{
     color: white;
     font-family: "SUSE mono";
     overflow: hidden;
+    overflow-x: hidden;
 }
 
 header{
@@ -529,6 +536,7 @@ footer:hover > img{
     width: 100vw;
     height: 100vh;
     object-fit: cover;
+    zoom: 1 !important;
 }
 
 @media (min-aspect-ratio: 16/9){
